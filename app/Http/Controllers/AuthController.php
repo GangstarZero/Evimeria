@@ -38,7 +38,7 @@ class AuthController
             throw $e;
         }
 
-        return redirect()->route('auth.login');
+        return redirect()->route('login');
     }
 
     public function loginUser(Request $req)
