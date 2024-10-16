@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('navbar')
+    @include('navbar.guestNavbar')
 
     <div class="login-container">
         <h2>Register</h2>
@@ -31,7 +31,7 @@
         </div>
         <button type="submit" class="btn" id="register">Register</button>
         <div class="register-link">
-            <p>Already have an account? <a href="#">Login here</a></p>
+            <p>Already have an account? <a href={{ route('login') }}>Login here</a></p>
         </div>
     </div>
 </body>
@@ -40,7 +40,6 @@
     $(document).ready(function() {
         $('#register').click(function(e) {
             e.preventDefault();
-            console.log('hi');
 
             const dataRegister = {
                 _token: '{{ csrf_token() }}',
@@ -54,8 +53,18 @@
                 type: 'POST',
                 data: dataRegister,
                 success: function(response, status, xhr) {
-                    window.location.href = '{{ route('auth.login') }}';
+                    window.location.href = '{{ route('login') }}';
                 },
+                error: function(xhr, status, error) {
+                    console.log('Error: ' + error); 
+
+                    if (xhr.responseJSON && xhr.responseJSON.message) {
+                        alert('Error: ' + xhr.responseJSON
+                        .message); 
+                    } else {
+                        alert('An error occurred. Please try again later.');
+                    }
+                }
             })
         })
     })
