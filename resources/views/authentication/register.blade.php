@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Register')
+
 @section('extra-css')
     <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
 @endsection
@@ -49,14 +51,19 @@
                         window.location.href = '{{ route('login') }}';
                     },
                     error: function(xhr, status, error) {
-                        console.log('Error: ' + error);
+                        let errorMessage = 'An error occurred'; 
 
                         if (xhr.responseJSON && xhr.responseJSON.message) {
-                            alert('Error: ' + xhr.responseJSON
-                                .message);
-                        } else {
-                            alert('An error occurred. Please try again later.');
+                            errorMessage = xhr.responseJSON
+                            .message; 
                         }
+
+                        swal.fire({
+                            title: "Gagal",
+                            text: errorMessage, 
+                            icon: "error",
+                            button: "Close"
+                        });
                     }
                 })
             })

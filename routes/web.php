@@ -16,12 +16,15 @@ Route::get('/', function () {
 Route::controller(AuthController::class)
     ->group(function () {
         // Login
-        Route::get('/login', 'loginPage')->name('login');  // No 'auth.' prefix
+        Route::get('/login', 'loginPage')->name('login');
         Route::post('/login-user', 'loginUser')->name('auth.login-user');
 
         // Register
         Route::get('/register', 'registerPage')->name('auth.register');
         Route::post('/register-user', 'registerUser')->name('auth.register-user');
+
+        // logout
+        Route::post('/logout', 'logout')->name('auth.logout');
     });
 
 Route::middleware(['auth'])->group(function () {

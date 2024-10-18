@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title', 'Home')
+
 @section('content')
 
     @include('layout.guestNavbar')
