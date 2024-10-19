@@ -7,7 +7,7 @@
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
             <a class="nav-link fs-5 mx-4" href="{{ route('home') }}">Home</a>
             <a class="nav-link fs-5 mx-4" href="">Apply</a>
-            <a class="nav-link fs-5 mx-4" href="">Jobs</a>
+            <a class="nav-link fs-5 mx-4" href="{{ route('job.indexPage') }}">Jobs</a>
             <a class="nav-link fs-5 mx-4" href="">Contact</a>
         </div>
 

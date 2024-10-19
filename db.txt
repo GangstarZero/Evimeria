@@ -1,0 +1,107 @@
+CREATE TABLE user (
+	id INT AUTO_INCREMENT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE company (
+	id INT AUTO_INCREMENT NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    address VARCHAR(1000) NOT NULL,
+    description TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE title (
+	id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE job (
+	id INT AUTO_INCREMENT NOT NULL,
+    companyId INT NOT NULL,
+    titleId INT NOT NULL,
+    description TEXT NOT NULL,
+    poster VARCHAR(100) NOT NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    PRIMARY KEY(id),
+    CONSTRAINT `fk_company_id`
+    	FOREIGN KEY (companyId)
+    	REFERENCES company (id)
+    	ON DELETE CASCADE,
+    CONSTRAINT `fk_title_id`
+    	FOREIGN KEY (titleId)
+    	REFERENCES title (id)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE apply_job (
+    id INT AUTO_INCREMENT NOT NULL,
+	jobId INT NOT NULL,
+    userId INT NOT NULL,
+    fullName VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(100) NOT NULL,
+    salaryExpectation VARCHAR(100) NOT NULL,
+    cv VARCHAR(100) NOT NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT `fk_job_id`
+    	FOREIGN KEY (jobId)
+    	REFERENCES job (id)
+    	ON DELETE CASCADE,
+    CONSTRAINT `fk_user_id`
+    	FOREIGN KEY (userId)
+    	REFERENCES user (id)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE chat_room (
+	id INT AUTO_INCREMENT NOT NULL,
+    userId1 INT NOT NULL,
+    userId2 INT NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT `fk_userid1`
+    	FOREIGN KEY (userId1)
+    	REFERENCES user (id)
+    	ON DELETE CASCADE,
+    CONSTRAINT `fk_userid2`
+    	FOREIGN KEY (userId2)
+    	REFERENCES user (id)
+    	ON DELETE CASCADE
+);
+
+CREATE TABLE chat (
+	id INT AUTO_INCREMENT NOT NULL,
+    chatRoomId INT NOT NULL,
+    senderId INT NOT NULL,
+    content VARCHAR(1000) NOT NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT `fk_chat_room_id`
+    	FOREIGN KEY (chatRoomId)
+    	REFERENCES chat_room (id)
+    	ON DELETE CASCADE,
+    CONSTRAINT `fk_sender_id`
+    	FOREIGN KEY (senderId)
+    	REFERENCES user (id)
+    	ON DELETE CASCADE
+);
+
+INSERT INTO user (email, name, password) VALUES ('user1@gmail.com', 'user1', 'user1');
+
+INSERT INTO company (email, name, password, address, description) VALUES ('company1@gmail.com', 'company1', 'company1', 'company1 address', 'company1 description');
+
+INSERT INTO title (name) VALUES ('FrontEnd');
+INSERT INTO title (name) VALUES ('BackEnd');
+INSERT INTO title (name) VALUES ('FullStack');
+
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 1, 'desc1', 'poster1', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 2, 'desc2', 'poster2', NOW(), NOW());
