@@ -1,4 +1,4 @@
-<nav class="container-fluid navbar-light bg-light p-3">
+<nav class="container-fluid navbar-light p-3" style="background-color: #8B3333;">
     <div class="d-flex justify-content-between align-items-center w-100">
         <div>
             <p class="fs-5">Logo</p>
@@ -17,9 +17,7 @@
     </div>
 
     <div class="d-flex d-md-none flex-column align-items-center">
-        <a class="nav-link fs-5" href="{{ route('home') }}">Home</a>
-        <a class="nav-link fs-5" href="">Apply</a>
-        <a class="nav-link fs-5" href="">Jobs</a>
-        <a class="nav-link fs-5" href="">Contact</a>
+        <a class="nav-link fs-5 text-white" href="{{ route('home') }}">Home</a>
+        <a class="nav-link fs-5 text-white" href="">Jobs</a>
     </div>
 </nav>

@@ -19,6 +19,15 @@ class AuthController
         return view('authentication.register');
     }
 
+    public function logout()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+        }
+
+        return view('index');
+    }
+
     public function registerUser(Request $req)
     {
         try {
@@ -28,14 +37,21 @@ class AuthController
                 'password'
             ]);
 
-            $exist = User::where('email', '=', $data['email'])->get();
-            if (!isset($exist)) {
-                return response()->json(['status' => 1, 'message' => 'Account Already Exists']);
+            $exist = User::where('email', '=', $data['email'])->first();
+
+            if ($exist != null) {
+                return response()->json([
+                    'status' => 1,
+                    'message' => 'Account Already Exists'
+                ], 422);
             }
 
             User::create($data);
         } catch (\Exception $e) {
-            throw $e;
+            return response()->json([
+                'status' => 1,
+                'message' => $e
+            ], 422);
         }
 
         return redirect()->route('login');
@@ -57,14 +73,17 @@ class AuthController
             // dd($userData->toArray());
             if (!$userData || $data['password'] !== $userData['password']) {
                 return response()->json([
-                    'status' => 0,
+                    'status' => 1,
                     'message' => 'Invalid credentials. Please try again.'
-                ], 401);
+                ], 422);
             }
 
             Auth::login($userData);
         } catch (\Exception $e) {
-            throw $e;
+            return response()->json([
+                'status' => 1,
+                'message' => $e
+            ], 422);
         }
         return redirect()->route('dashboard.home');
     }
