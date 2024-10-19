@@ -4,12 +4,12 @@
             <p class="fs-5">Logo</p>
         </div>
 
-       <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-           <a class="nav-link fs-5 mx-4" href="">Home</a>
-           <a class="nav-link fs-5 mx-4" href="{{ route('job.addPage') }}">Apply</a>
-            <a class="nav-link fs-5 mx-4" href="{{ route('job.indexPage') }}">Jobs</a>
-           <a class="nav-link fs-5 mx-4" href="">Contact</a>
-       </div>
+        <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
+            <a class="nav-link fs-5 mx-4 text-white" href="">Home</a>
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.addPage') }}">Apply</a>
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.indexPage') }}">Jobs</a>
+            <a class="nav-link fs-5 mx-4 text-white" href="">Contact</a>
+        </div>
 
         <div>
             <button type="submit" class="btn btn-danger" id="logout">Logout</button>
