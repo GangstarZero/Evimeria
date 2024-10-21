@@ -45,7 +45,7 @@
                     type: 'POST',
                     data: dataRegister,
                     success: function(response, status, xhr) {
-                        window.location.href = '{{ route('dashboard.home') }}';
+                        window.location.href = response.redirect_url;
                     },
                     error: function(xhr, status, error) {
                         let errorMessage = 'An error occurred';

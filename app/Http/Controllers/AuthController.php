@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -66,25 +67,43 @@ class AuthController
             ]);
 
             $userData = User::where('email', '=', $data['email'])->first();
-            // if(!isset($exist))
-            // {
-            //     $userData = User::where('email', '=', $data['email'])->get();
-            // } *Untuk company*
-            // dd($userData->toArray());
-            if (!$userData || $data['password'] !== $userData['password']) {
-                return response()->json([
-                    'status' => 1,
-                    'message' => 'Invalid credentials. Please try again.'
-                ], 422);
-            }
 
-            Auth::login($userData);
+            if (!$userData) {
+                $userData = Company::where('email', '=', $data['email'])->first();
+
+                if (!$userData || $data['password'] !== $userData['password']) {
+                    return response()->json([
+                        'status' => 1,
+                        'message' => 'Invalid credentials. Please try again.'
+                    ], 422);
+                }
+
+                Auth::guard('company')->login($userData);
+                return response()->json([
+                    'status' => 0,
+                    'message' => 'Login successful!',
+                    'redirect_url' => route('company.home')
+                ]);
+            } else {
+                if ($data['password'] !== $userData['password']) {
+                    return response()->json([
+                        'status' => 1,
+                        'message' => 'Invalid credentials. Please try again.'
+                    ], 422);
+                }
+
+                Auth::login($userData);
+                return response()->json([
+                    'status' => 0,
+                    'message' => 'Login successful!',
+                    'redirect_url' => route('dashboard.home')
+                ]);
+            }
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 1,
-                'message' => $e
+                'message' => $e->getMessage()
             ], 422);
         }
-        return redirect()->route('dashboard.home');
     }
 }
