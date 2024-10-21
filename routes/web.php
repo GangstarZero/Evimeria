@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\TitleController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TitleController;
 use App\Http\Controllers\ApplyJobController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CompanyDashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
@@ -32,10 +33,10 @@ Route::controller(AuthController::class)
 
 Route::middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)
-    ->name('dashboard.')
-    ->group(function (){
-        Route::get('/dashboard', 'index')->name('home');
-    });
+        ->name('dashboard.')
+        ->group(function () {
+            Route::get('/dashboard', 'index')->name('home');
+        });
 });
 
 Route::controller(JobController::class)
@@ -49,9 +50,12 @@ Route::controller(JobController::class)
 
         // api route
         Route::post('api/job', [JobController::class, 'insertJob'])->name('api.add');
-
     });
 
 Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAll');
 
 Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
+
+Route::middleware(['auth:company'])->name('company.')->group(function () {
+    Route::get('/company/dashboard', [CompanyDashboardController::class, 'index'])->name('home');
+});
