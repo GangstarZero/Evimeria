@@ -10,12 +10,20 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CompanyDashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
+// GUEST
 Route::get('/', function () {
     if (Auth::check()) {
         Auth::logout();
     }
     return view('index');
 })->name('home');
+
+Route::controller(JobController::class)
+    ->name('job.')
+    ->group(function () {
+        Route::get('job', 'guestIndexPage')->name('guestIndexPage');
+        Route::get('job/{id}', 'guestDetailPage')->name('guestDetailPage');
+    });
 
 Route::controller(AuthController::class)
     ->group(function () {
@@ -31,32 +39,48 @@ Route::controller(AuthController::class)
         Route::post('/logout', 'logout')->name('auth.logout');
     });
 
+Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAll');
+
+Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
+
+
+
+
+
+// USER
 Route::middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)
         ->name('dashboard.')
         ->group(function () {
             Route::get('/dashboard', 'index')->name('home');
         });
+
+    Route::controller(JobController::class)
+        ->name('job.')
+        ->group(function () {
+            Route::get('user/job', 'userIndexPage')->name('userIndexPage');
+            Route::get('user/job/{id}', 'userDetailPage')->name('userDetailPage');
+        });
 });
 
-Route::controller(JobController::class)
-    ->name('job.')
-    ->group(function () {
 
-        // page
-        Route::get('job', [JobController::class, 'indexPage'])->name('indexPage');
-        Route::get('job/add', [JobController::class, 'addPage'])->name('addPage');
-        Route::get('job/{id}', [JobController::class, 'detailPage'])->name('detailPage');
 
-        // api route
-        Route::post('api/job', [JobController::class, 'insertJob'])->name('api.insert');
-        Route::delete('api/job/{id}', [JobController::class, 'deleteJob'])->name('api.delete');
-    });
 
-Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAll');
 
-Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
-
+// COMPANY
 Route::middleware(['auth:company'])->name('company.')->group(function () {
     Route::get('/company/dashboard', [CompanyDashboardController::class, 'index'])->name('home');
+
+    Route::controller(JobController::class)
+        ->name('job.')
+        ->group(function () {
+            Route::get('company/job', 'companyIndexPage')->name('indexPage');
+            Route::get('company/job/add', 'companyAddPage')->name('addPage');
+            Route::get('company/job/{id}', 'companyDetailPage')->name('detailPage');
+
+            // api route
+            Route::post('api/job','insertJob')->name('api.insert');
+            Route::delete('api/job/{id}','deleteJob')->name('api.delete');
+        });
+    
 });

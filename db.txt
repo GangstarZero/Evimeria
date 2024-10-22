@@ -96,12 +96,18 @@ CREATE TABLE chat (
 );
 
 INSERT INTO user (email, name, password) VALUES ('user1@gmail.com', 'user1', 'user1');
+INSERT INTO user (email, name, password) VALUES ('user2@gmail.com', 'user2', 'user2');
 
 INSERT INTO company (email, name, password, address, description) VALUES ('company1@gmail.com', 'company1', 'company1', 'company1 address', 'company1 description');
+INSERT INTO company (email, name, password, address, description) VALUES ('company2@gmail.com', 'company2', 'company2', 'company2 address', 'company2 description');
 
 INSERT INTO title (name) VALUES ('FrontEnd');
 INSERT INTO title (name) VALUES ('BackEnd');
 INSERT INTO title (name) VALUES ('FullStack');
+INSERT INTO title (name) VALUES ('DevOps');
+INSERT INTO title (name) VALUES ('QA');
 
 INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 1, 'desc1', 'poster1', NOW(), NOW());
 INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 2, 'desc2', 'poster2', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 1, 'desc3', 'poster3', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 2, 'desc4', 'poster4', NOW(), NOW());

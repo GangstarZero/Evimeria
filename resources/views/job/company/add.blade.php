@@ -1,10 +1,16 @@
 @extends('layout.master')
 
+@section('title', 'Add Job')
+
 @section('content')
-    {{-- @include('layout.guestNavbar') --}}
+
+    @include('layout.companyNavbar')
+
+    <h3>Insert Job</h3>
+
+    {{ $userId }}
 
     <div>
-        <h3>Insert Job</h3>
         <div>
             <select id="titleDdl">
                 <option hidden></option>
@@ -21,9 +27,13 @@
         </div>
         <button type="submit" class="btn" id="button">Insert</button>
     </div>
+
 @endsection
 
 @section('extra-js')
+
+    @include('authentication.logout')
+
     <script>
         
         $(document).ready(function() {
@@ -39,14 +49,14 @@
 
             const data = {
                 _token: '{{ csrf_token() }}',
-                companyId: 1,
+                companyId: parseInt({{ $userId }}),
                 titleId: parseInt(document.getElementById('titleDdl').value),
                 description: document.getElementById('description').value,
                 poster: document.getElementById('poster').value
             }
 
             $.ajax({
-                url: '{{ route("job.api.insert") }}',
+                url: '{{ route("company.job.api.insert") }}',
                 type: 'POST',
                 data: data,
                 success: function(response, status, xhr) {
@@ -56,4 +66,5 @@
         })
 
     </script>
+
 @endsection

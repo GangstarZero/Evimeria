@@ -1,10 +1,16 @@
 @extends('layout.master')
 
-@section('content')
-    {{-- @include('layout.guestNavbar') --}}
+@section('title', 'Job Detail')
 
-    <div id="jobContainer">
-        <h3>Job Detail</h3>
+@section('content')
+
+    @include('layout.userNavbar')
+
+    <h3>Job Detail</h3>
+    
+    {{-- {{ $userId }} --}}
+
+    <div>
         <p>Company Name: {{ $job->company->name }}</p>
         <p>Job Title: {{ $job->title->name }}</p>
         <p>Job Description: {{ $job->description }}</p>
@@ -33,6 +39,9 @@
 @endsection
 
 @section('extra-js')
+
+    @include('authentication.logout')
+
     <script>
         
         $('#button').click(function (){
@@ -40,7 +49,7 @@
             const data = {
                 _token: '{{ csrf_token() }}',
                 jobId: parseInt(document.getElementById('jobId').value),
-                userId: 1,
+                userId: parseInt({{ $userId }}),
                 fullName: document.getElementById('fullName').value,
                 phoneNumber: document.getElementById('phoneNumber').value,
                 salaryExpectation: document.getElementById('salaryExpectation').value,
@@ -64,4 +73,5 @@
         })
 
     </script>
+
 @endsection
