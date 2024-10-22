@@ -17,6 +17,6 @@ class Title extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
-        'title'
+        'name'
     ];
 }

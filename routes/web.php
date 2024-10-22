@@ -48,7 +48,8 @@ Route::controller(JobController::class)
         Route::get('job/{id}', [JobController::class, 'detailPage'])->name('detailPage');
 
         // api route
-        Route::post('api/job', [JobController::class, 'insertJob'])->name('api.add');
+        Route::post('api/job', [JobController::class, 'insertJob'])->name('api.insert');
+        Route::delete('api/job/{id}', [JobController::class, 'deleteJob'])->name('api.delete');
 
     });
 

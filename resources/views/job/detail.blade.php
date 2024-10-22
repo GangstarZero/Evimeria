@@ -4,6 +4,7 @@
     {{-- @include('layout.guestNavbar') --}}
 
     <div id="jobContainer">
+        <h3>Job Detail</h3>
         <p>Company Name: {{ $job->company->name }}</p>
         <p>Job Title: {{ $job->title->name }}</p>
         <p>Job Description: {{ $job->description }}</p>

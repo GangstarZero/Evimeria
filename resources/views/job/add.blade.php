@@ -4,11 +4,21 @@
     {{-- @include('layout.guestNavbar') --}}
 
     <div>
-        <select id="titleDdl">
-            <option hidden></option>
-        </select>
-        <input type="text" id="description" placeholder="description" />
-        <input type="text" id="poster" placeholder="poster" />
+        <h3>Insert Job</h3>
+        <div>
+            <select id="titleDdl">
+                <option hidden></option>
+                @foreach($titleList as $title)
+                    <option value={{ $title->id }}>{{ $title->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
+            <input type="text" id="description" placeholder="Description" />
+        </div>
+        <div>
+            <input type="text" id="poster" placeholder="Poster" />
+        </div>
         <button type="submit" class="btn" id="button">Insert</button>
     </div>
 @endsection
@@ -17,16 +27,6 @@
     <script>
         
         $(document).ready(function() {
-
-            $.ajax({
-                url: '{{ route("title.getAll") }}',
-                type: 'GET',
-                success: function(response) {
-                    response.forEach(title => {
-                        $("#titleDdl").append(`<option value=${title.id}>${title.name}</option>`)    
-                    });
-                }
-            })
 
             $("#titleDdl").select2({
                 placeholder: 'Job Title',
@@ -46,7 +46,7 @@
             }
 
             $.ajax({
-                url: '{{ route("job.api.add") }}',
+                url: '{{ route("job.api.insert") }}',
                 type: 'POST',
                 data: data,
                 success: function(response, status, xhr) {
