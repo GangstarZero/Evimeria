@@ -1,0 +1,84 @@
+.addPage {
+    padding: 2rem 5rem;
+}
+
+.inputBoxContainer {
+    margin-bottom: 1rem;
+}
+
+.inputBoxContainer > input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.inputBoxContainer > input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* .select2-selection__rendered {
+    line-height: fit-content !important;
+} */
+.select2-container .select2-selection--single {
+    height: fit-content !important;
+    border: 1px solid #ddd;
+}
+.select2-selection__arrow {
+    height: 100% !important;
+}
+
+.inputBox {
+    width: 100%;
+    padding: 8px 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.inputBox:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#chooseFileText {
+    pointer-events: none;
+}
+
+#file-preview {
+    display: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+
+
+.uploadPoster {
+    width: 100%;
+    border: dashed grey 1.5px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: grey;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#poster {
+    display: none;
+}

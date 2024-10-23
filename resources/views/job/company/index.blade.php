@@ -2,6 +2,10 @@
 
 @section('title', 'Job')
 
+@section('extra-css')
+    <link rel="stylesheet" href="{{ asset('css/job/index.css') }}">
+@endsection
+
 @section('content')
 
     @include('layout.companyNavbar')
@@ -13,16 +17,16 @@
         <button type="submit">Search</button>
     </form> --}}
 
-    <div>
+    <div class="job-list-container">
         @foreach($jobList as $job)
-            <div>
+            <div class="job">
                 <a href="{{ route('company.job.detailPage', ['id' => $job->id]) }}">
                     <img src="{{ asset($job->poster) }}" />
                     <p>{{ $job->title->name }}</p>
                     <p>{{ $job->description }}</p>
                     <p>{{ $job->created_at }}</p>
                 </a>
-                <button onclick="deleteButtonClick({{ $job->id }})">Delete</button>
+                {{-- <button onclick="deleteButtonClick({{ $job->id }})">Delete</button> --}}
             </div>
         @endforeach
     </div>
@@ -35,16 +39,16 @@
 
     <script>
 
-        const deleteButtonClick = (id) => {
-            $.ajax({
-                url: `api/job/${id}`,
-                type: 'DELETE',
-                data:  { _token: '{{ csrf_token() }}' },
-                success: function(response, status, xhr) {
-                    window.location.reload()
-                }
-            })   
-        }
+        // const deleteButtonClick = (id) => {
+        //     $.ajax({
+        //         url: `api/job/${id}`,
+        //         type: 'DELETE',
+        //         data:  { _token: '{{ csrf_token() }}' },
+        //         success: function(response, status, xhr) {
+        //             window.location.reload()
+        //         }
+        //     })   
+        // }
 
         // $('#searchBar').submit(function (e){
         //     const query = document.getElementById('searchBox').value

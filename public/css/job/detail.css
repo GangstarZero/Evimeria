@@ -1,0 +1,49 @@
+.detail-page {
+    margin: 2rem 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.company-detail, .apply-job-form {
+    width: 50%;
+}
+
+/* .company-detail {
+
+} */
+
+.company-detail img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.inputBoxContainer {
+    margin-bottom: 1rem;
+}
+
+.inputBoxContainer > input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.inputBoxContainer > input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}

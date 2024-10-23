@@ -2,15 +2,19 @@
 
 @section('title', 'Job')
 
+@section('extra-css')
+    <link rel="stylesheet" href="{{ asset('css/job/index.css') }}">
+@endsection
+
 @section('content')
 
     @include('layout.userNavbar')
 
     <h3>Job List</h3>
 
-    <div>
+    <div class="job-list-container">
         @foreach($jobList as $job)
-            <div>
+            <div class="job">
                 <a href="{{ route('job.userDetailPage', ['id' => $job->id]) }}">
                     <img src="{{ asset($job->poster) }}" />
                     <p>{{ $job->title->name }}</p>

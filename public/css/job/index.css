@@ -1,0 +1,17 @@
+.job-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+
+.job {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.job img {
+    width: 10rem;
+    height: 10rem;
+}

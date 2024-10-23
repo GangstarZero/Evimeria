@@ -3,33 +3,37 @@
 @section('title', 'Add Job')
 
 @section('extra-css')
-    <link rel="stylesheet" href="{{ asset('css/addJob.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/job/add.css') }}">
 @endsection
 
 @section('content')
 
     @include('layout.companyNavbar')
 
-    <h3>Insert Job</h3>
-
-    <div>
-        <div>
-            <select id="titleDdl">
-                <option hidden></option>
-                @foreach($titleList as $title)
-                    <option value={{ $title->id }}>{{ $title->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div>
-            <input type="text" id="description" placeholder="Description" />
-        </div>
-        <div>
-            <label for="poster" class="uploadPoster">Choose a File</label>
-            <input type="file" id="poster" />
-            <img src="#" alt="Preview Uploaded Image" id="file-preview">
-        </div>
-        <button type="submit" class="btn" id="button">Insert</button>
+    <div class="addPage">
+        <form id="addJobForm">
+            <h3>Insert Job</h3>
+            <div class="inputBoxContainer">
+                <select id="titleDdl" required>
+                    <option hidden></option>
+                    @foreach($titleList as $title)
+                        <option value={{ $title->id }}>{{ $title->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="inputBoxContainer">
+                <input type="text" id="description" placeholder="Description" required />
+            </div>
+            <div class="inputBoxContainer">
+                <label for="poster" class="uploadPoster">
+                    <label id="chooseFileText">Choose a File</label>
+                    <img src="#" id="file-preview">
+                </label>
+                <input type="file" id="poster" required />
+                {{-- <img src="#" alt="Preview Uploaded Image" id="file-preview"> --}}
+            </div>
+            <button type="submit" class="btn">Insert</button>
+        </form>
     </div>
 
 
@@ -55,6 +59,9 @@
                     preview.setAttribute('src', event.target.result);
                 }
                 fileReader.readAsDataURL(file[0]);
+
+                document.getElementById('chooseFileText').style.display = "none"
+                document.getElementById('file-preview').style.display = "block"
             }
         }
         input.addEventListener("change", previewPhoto);
@@ -83,14 +90,14 @@
 
             $("#titleDdl").select2({
                 placeholder: 'Job Title',
-                width: '10rem'
+                width: '100%',
+                selectionCssClass: 'inputBox'
             })
 
         })
 
-        $('#button').click(function (){
-
-            download()
+        $('#addJobForm').submit(function (e){
+            e.preventDefault()
 
             const data = {
                 _token: '{{ csrf_token() }}',
@@ -108,6 +115,8 @@
                     window.location.reload()
                 }
             })
+
+            download()
         })
 
     </script>
