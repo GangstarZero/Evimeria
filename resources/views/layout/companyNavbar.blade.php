@@ -8,7 +8,7 @@
             <a class="nav-link fs-5 mx-4 text-white" href="{{ route('company.home') }}">Home</a>
             <a class="nav-link fs-5 mx-4 text-white" href="{{ route('company.job.addPage') }}">Apply</a>
             <a class="nav-link fs-5 mx-4 text-white" href="{{ route('company.job.indexPage') }}">Jobs</a>
-            <a class="nav-link fs-5 mx-4 text-white" href="">Contact</a>
+            {{-- <a class="nav-link fs-5 mx-4 text-white" href="">Contact</a> --}}
         </div>
 
         <div>
@@ -20,6 +20,5 @@
         <a class="nav-link fs-5 text-white" href="">Home</a>
         <a class="nav-link fs-5 text-white" href="">Apply</a>
         <a class="nav-link fs-5 text-white" href="">Jobs</a>
-        <a class="nav-link fs-5 text-white" href="">Contact</a>
     </div>
 </nav>

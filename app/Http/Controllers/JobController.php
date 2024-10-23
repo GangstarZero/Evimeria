@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\Title;
+use App\Models\ApplyJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,7 +60,8 @@ class JobController extends Controller
 
     public function companyDetailPage($id){
         $job = Job::with(['title', 'company'])->find($id);
-        return view('job/company/detail', compact('job'));
+        $applyJobList = ApplyJob::where('jobId', $id)->where('status', 'Applied')->get();
+        return view('job/company/detail', compact('job'), compact('applyJobList'));
     }
 
     public function companyAddPage(){

@@ -32,7 +32,7 @@
                 <input type="file" id="poster" required />
                 {{-- <img src="#" alt="Preview Uploaded Image" id="file-preview"> --}}
             </div>
-            <button type="submit" class="btn">Insert</button>
+            <button type="submit" id="insertButton" class="btn btn-primary">Insert</button>
         </form>
     </div>
 

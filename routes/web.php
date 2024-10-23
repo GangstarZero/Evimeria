@@ -42,6 +42,7 @@ Route::controller(AuthController::class)
 Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAll');
 
 Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
+Route::put('/apply_job', [ApplyJobController::class, 'updateApplyJob'])->name('apply_job.edit');
 
 
 
@@ -61,6 +62,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('user/job', 'userIndexPage')->name('userIndexPage');
             Route::get('user/job/{id}', 'userDetailPage')->name('userDetailPage');
         });
+
+    Route::get('/history', [ApplyJobController::class, 'historyPage'])->name('apply_job.historyPage');
 });
 
 

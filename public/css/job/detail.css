@@ -1,5 +1,8 @@
 .detail-page {
-    margin: 2rem 5rem;
+    padding: 2rem 5rem;
+}
+
+.detail-form-container {
     display: flex;
     justify-content: center;
 }
@@ -33,17 +36,10 @@
     outline: none;
 }
 
-.btn {
+#button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    color: white;
+.apply-job {
+    display: flex;
 }

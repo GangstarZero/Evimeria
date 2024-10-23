@@ -14,33 +14,34 @@
     {{-- {{ $userId }} --}}
     
     <div class="detail-page">
-        <div class="company-detail">
-            <img src="{{ asset($job->poster) }}" />
-            <p>Company Name: {{ $job->company->name }}</p>
-            <p>Job Title: {{ $job->title->name }}</p>
-            <p>Job Description: {{ $job->description }}</p>
-            <p>Date: {{ $job->created_at }}</p>
-        </div>
-    
-        <div class="apply-job-form">
-            <form id="applyJobForm">
-                <div class="inputBoxContainer">
-                    <input type="hidden" id="jobId" value="{{ $job->id }}" />
-                </div>
-                <div class="inputBoxContainer">
-                    <input type="text" id="fullName" placeholder="Full Name" required>
-                </div>
-                <div class="inputBoxContainer">
-                    <input type="text" id="phoneNumber" placeholder="Phone Number" required>
-                </div>
-                <div class="inputBoxContainer">
-                    <input type="text" id="salaryExpectation" placeholder="Salary Estimation" required>
-                </div>
-                <div class="inputBoxContainer">
-                    <input type="text" id="cv" placeholder="CV" required>
-                </div>
-                <button id="button" class="btn">Apply</button>
-            </form>
+        <div class="detail-form-container">
+            <div class="company-detail">
+                <img src="{{ asset($job->poster) }}" />
+                <p>Company Name: {{ $job->company->name }}</p>
+                <p>Job Title: {{ $job->title->name }}</p>
+                <p>Job Description: {{ $job->description }}</p>
+                <p>Date: {{ $job->created_at }}</p>
+            </div>
+            <div class="apply-job-form">
+                <form id="applyJobForm">
+                    <div class="inputBoxContainer">
+                        <input type="hidden" id="jobId" value="{{ $job->id }}" />
+                    </div>
+                    <div class="inputBoxContainer">
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                    </div>
+                    <div class="inputBoxContainer">
+                        <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+                    </div>
+                    <div class="inputBoxContainer">
+                        <input type="text" id="salaryExpectation" placeholder="Salary Estimation" required>
+                    </div>
+                    <div class="inputBoxContainer">
+                        <input type="text" id="cv" placeholder="CV" required>
+                    </div>
+                    <button id="button" class="btn btn-primary">Apply</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -63,7 +64,8 @@
                 fullName: document.getElementById('fullName').value,
                 phoneNumber: document.getElementById('phoneNumber').value,
                 salaryExpectation: document.getElementById('salaryExpectation').value,
-                cv: document.getElementById('cv').value
+                cv: document.getElementById('cv').value,
+                status: 'Applied'
             }
 
             console.log(data)
@@ -76,8 +78,8 @@
                     window.location.reload()
                     // window.location.href = '{{ route('dashboard.home') }}';
                 },
-                error: function(error){
-                    console.log(error)
+                error: function(xhr){
+                    console.log(xhr)
                 }
             })
         })
