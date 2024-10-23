@@ -11,6 +11,7 @@
     {{-- {{ $userId }} --}}
 
     <div>
+        <img src="{{ asset($job->poster) }}" />
         <p>Company Name: {{ $job->company->name }}</p>
         <p>Job Title: {{ $job->title->name }}</p>
         <p>Job Description: {{ $job->description }}</p>

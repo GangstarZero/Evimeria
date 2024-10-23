@@ -107,7 +107,7 @@ INSERT INTO title (name) VALUES ('FullStack');
 INSERT INTO title (name) VALUES ('DevOps');
 INSERT INTO title (name) VALUES ('QA');
 
-INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 1, 'desc1', 'poster1', NOW(), NOW());
-INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 2, 'desc2', 'poster2', NOW(), NOW());
-INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 1, 'desc3', 'poster3', NOW(), NOW());
-INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 2, 'desc4', 'poster4', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 1, 'desc1', 'assets/poster/andrew.png', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (1, 2, 'desc2', 'assets/poster/minion.jpg', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 1, 'desc3', 'assets/poster/naruto.jpg', NOW(), NOW());
+INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 2, 'desc4', 'assets/poster/spongebob.webp', NOW(), NOW());

@@ -12,6 +12,7 @@
         @foreach($jobList as $job)
             <div>
                 <a href="{{ route('job.guestDetailPage', ['id' => $job->id]) }}">
+                    <img src="{{ asset($job->poster) }}" />
                     <p>{{ $job->title->name }}</p>
                     <p>{{ $job->description }}</p>
                     <p>{{ $job->created_at }}</p>
