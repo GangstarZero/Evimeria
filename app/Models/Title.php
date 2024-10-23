@@ -19,4 +19,9 @@ class Title extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class, 'titleId');
+    }
 }

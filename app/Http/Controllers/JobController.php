@@ -11,9 +11,12 @@ class JobController extends Controller
 {
 
     // GUEST
-    public function guestIndexPage(){
-        $jobList = Job::get();
-        return view('job/guest/index', compact('jobList'));
+    public function guestIndexPage(Request $req){
+        $query = $req->query('query') ?? "";
+        $jobList = Job::whereHas('title', function ($job) use ($query){
+            $job->where('name', 'LIKE', '%' . $query . '%');
+        })->get();
+        return view('job/guest/index', compact('jobList'), compact('query'));
     }
 
     public function guestDetailPage($id){
@@ -26,9 +29,12 @@ class JobController extends Controller
 
 
     // USER
-    public function userIndexPage(){
-        $jobList = Job::get();
-        return view('job/user/index', compact('jobList'));
+    public function userIndexPage(Request $req){
+        $query = $req->query('query') ?? "";
+        $jobList = Job::whereHas('title', function ($job) use ($query){
+            $job->where('name', 'LIKE', '%' . $query . '%');
+        })->get();
+        return view('job/user/index', compact('jobList'), compact('query'));
     }
 
     public function userDetailPage($id){
@@ -42,10 +48,13 @@ class JobController extends Controller
 
 
     // COMPANY
-    public function companyIndexPage(){
+    public function companyIndexPage(Request $req){
         $userId = Auth::user()->id;
-        $jobList = Job::where('companyId', $userId)->get();
-        return view('job/company/index', compact('jobList'));
+        $query = $req->query('query') ?? "";
+        $jobList = Job::whereHas('title', function ($job) use ($query){
+            $job->where('name', 'LIKE', '%' . $query . '%');
+        })->where('companyId', $userId)->get();
+        return view('job/company/index', compact('jobList'), compact('query'));
     }
 
     public function companyDetailPage($id){
