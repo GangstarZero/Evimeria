@@ -20,18 +20,24 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2rem 4rem;
 }
 
 .job {
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1rem 0.7rem;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .job img {
-    width: 10rem;
-    height: 10rem;
+    width: 14rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    transition: transform 0.25s;
+}
+
+.job:hover img {
+    transform: scale(1.1);
 }
 
 #searchButton {

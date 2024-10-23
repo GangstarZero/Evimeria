@@ -16,7 +16,7 @@
             <p>Company Name: {{ $job->company->name }}</p>
             <p>Job Title: {{ $job->title->name }}</p>
             <p>Job Description: {{ $job->description }}</p>
-            <p>Job Poster: {{ $job->poster }}</p>
+            <p>Date: {{ $job->created_at }}</p>
         </div>
     </div>
 

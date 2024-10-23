@@ -19,7 +19,7 @@
             <p>Company Name: {{ $job->company->name }}</p>
             <p>Job Title: {{ $job->title->name }}</p>
             <p>Job Description: {{ $job->description }}</p>
-            <p>Job Poster: {{ $job->poster }}</p>
+            <p>Date: {{ $job->created_at }}</p>
         </div>
     
         <div class="apply-job-form">
@@ -39,7 +39,7 @@
                 <div class="inputBoxContainer">
                     <input type="text" id="cv" placeholder="CV" required>
                 </div>
-                <button id="button" class="btn">Submit</button>
+                <button id="button" class="btn">Apply</button>
             </form>
         </div>
     </div>

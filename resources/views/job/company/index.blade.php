@@ -20,15 +20,10 @@
     
         <div class="job-list-container">
             @foreach($jobList as $job)
-                <div class="job">
-                    <a href="{{ route('company.job.detailPage', ['id' => $job->id]) }}">
-                        <img src="{{ asset($job->poster) }}" />
-                        <p>{{ $job->title->name }}</p>
-                        <p>{{ $job->description }}</p>
-                        <p>{{ $job->created_at }}</p>
-                    </a>
-                    {{-- <button onclick="deleteButtonClick({{ $job->id }})">Delete</button> --}}
-                </div>
+                <a href="{{ route('company.job.detailPage', ['id' => $job->id]) }}" class="job">
+                    <img src="{{ asset($job->poster) }}" />
+                </a>
+                {{-- <button onclick="deleteButtonClick({{ $job->id }})">Delete</button> --}}
             @endforeach
         </div>
     </div>
