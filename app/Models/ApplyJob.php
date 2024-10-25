@@ -21,7 +21,8 @@ class ApplyJob extends Model
         'fullName',
         'phoneNumber',
         'salaryExpectation',
-        'cv'
+        'cv',
+        'status'
     ];
 
     public function job(): HasOne

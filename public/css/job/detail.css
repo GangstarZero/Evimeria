@@ -1,0 +1,45 @@
+.detail-page {
+    padding: 2rem 5rem;
+}
+
+.detail-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.company-detail, .apply-job-form {
+    width: 50%;
+}
+
+/* .company-detail {
+
+} */
+
+.company-detail img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.inputBoxContainer {
+    margin-bottom: 1rem;
+}
+
+.inputBoxContainer > input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.inputBoxContainer > input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#button {
+    width: 100%;
+}
+
+.apply-job {
+    display: flex;
+}
