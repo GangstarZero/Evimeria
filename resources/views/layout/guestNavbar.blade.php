@@ -5,17 +5,17 @@
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('home') }}">Home</a>
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.guestIndexPage') }}">Jobs</a>
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('home') }}">Home</a>
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('job.guestIndexPage') }}">Jobs</a>
         </div>
 
         <div>
-            <a class="btn btn-primary fs-5" href="{{ route('login') }}">Login</a>
+            <a class="btn btn-primary fs-4" href="{{ route('login') }}">Login</a>
         </div>
     </div>
 
     <div class="d-flex d-md-none flex-column align-items-center">
-        <a class="nav-link fs-5 text-white" href="{{ route('home') }}">Home</a>
-        <a class="nav-link fs-5 text-white" href="">Jobs</a>
+        <a class="nav-link fs-4 text-white" href="{{ route('home') }}">Home</a>
+        <a class="nav-link fs-4 text-white" href="">Jobs</a>
     </div>
 </nav>

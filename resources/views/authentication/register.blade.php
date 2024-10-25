@@ -9,24 +9,35 @@
 @section('content')
     @include('layout.guestNavbar')
 
-    <div class="login-container">
-        <h2>Register</h2>
-        <div class="form-group">
-            <label for="username">Name</label>
-            <input type="text" id="username" name="username" required>
+    <div class="main-wrapper">
+        <div class="login-container">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn" id="register">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href={{ route('login') }}>Login here</a></p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="username">Email</label>
-            <input type="text" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn" id="register">Register</button>
         <div class="register-link">
-            <p>Already have an account? <a href={{ route('login') }}>Login here</a></p>
+            Register an Account as Company?
+            <br>
+            <a href="">
+                Register your company here
+            </a>
         </div>
+
+
     </div>
 @endsection
 
@@ -51,16 +62,16 @@
                         window.location.href = '{{ route('login') }}';
                     },
                     error: function(xhr, status, error) {
-                        let errorMessage = 'An error occurred'; 
+                        let errorMessage = 'An error occurred';
 
                         if (xhr.responseJSON && xhr.responseJSON.message) {
                             errorMessage = xhr.responseJSON
-                            .message; 
+                                .message;
                         }
 
                         swal.fire({
                             title: "Gagal",
-                            text: errorMessage, 
+                            text: errorMessage,
                             icon: "error",
                             button: "Close"
                         });

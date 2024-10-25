@@ -4,9 +4,13 @@
     padding: 0;
 }
 
-/* div{
-    border: 1px solid black;
-} */
+.main-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 70vh; 
+}
 
 .login-container {
     background-color: white;

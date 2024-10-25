@@ -6,24 +6,24 @@
     <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
 @endsection
 
-
-
 @section('content')
     @include('layout.guestNavbar')
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <div class="form-group">
-            <label for="username">Email</label>
-            <input type="text" id="email" name="Email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn" id="login">Login</button>
-        <div class="register-link">
-            <p>Don't have an account? <a href={{ route('auth.register') }}>Register here</a></p>
+    <div class="main-wrapper">
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="text" id="email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn" id="login">Login</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href={{ route('auth.register') }}>Register here</a></p>
+            </div>
         </div>
     </div>
 @endsection

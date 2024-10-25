@@ -1,0 +1,38 @@
+.custom-container {
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.subTitle-box {
+   background-color: #8B3333; 
+   padding: 1% 1%;
+   border-radius: 10px; 
+   text-align: center; 
+   min-width: 15%; 
+   max-width: 20%; 
+   margin: auto; 
+   color: white; 
+   font-weight: bold;
+   font-size: 1.5rem;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.job-list-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 2rem 4rem;
+}
+
+.job-box{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.job {
+   border-radius: 0.5rem;
+   padding: 1rem 0.7rem;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
