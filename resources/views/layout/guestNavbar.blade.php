@@ -6,7 +6,7 @@
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
             <a class="nav-link fs-5 mx-4 text-white" href="{{ route('home') }}">Home</a>
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.indexPage') }}">Jobs</a>
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.guestIndexPage') }}">Jobs</a>
         </div>
 
         <div>

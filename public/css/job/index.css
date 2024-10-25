@@ -1,0 +1,54 @@
+.index-page {
+    padding: 2rem 5rem;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBar {
+    max-width: 50rem;
+}
+
+#searchBox {
+    box-shadow: none;
+}
+
+.job-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+}
+
+.job {
+    border-radius: 0.5rem;
+    padding: 1rem 0.7rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.job img {
+    width: 14rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+    transition: transform 0.25s;
+}
+
+.job:hover img {
+    transform: scale(1.1);
+}
+
+#searchButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    /* border-radius: 4px; */
+    /* cursor: pointer; */
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+    color: white;
+}

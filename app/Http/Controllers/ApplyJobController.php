@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\ApplyJob;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApplyJobController extends Controller
 {
+    public function historyPage(){
+        $userId = Auth::user()->id;
+        $applyJobList = ApplyJob::with(['job.title', 'job.company'])->where('userId', $userId)->get();
+        return view('history', compact('applyJobList'));
+    }
+
     public function insertApplyJob(Request $req){
 
         $data = $req->only([
@@ -15,9 +22,18 @@ class ApplyJobController extends Controller
             'fullName',
             'phoneNumber',
             'salaryExpectation',
-            'cv'
+            'cv',
+            'status'
         ]);
         ApplyJob::create($data);
+
+    }
+
+    public function updateApplyJob(Request $req){
+
+        $applyJob = ApplyJob::find($req->id);
+        $applyJob->status = $req->status; 
+        $applyJob->save();
 
     }
 }

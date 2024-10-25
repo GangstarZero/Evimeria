@@ -17,6 +17,11 @@ class Title extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
-        'title'
+        'name'
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class, 'titleId');
+    }
 }
