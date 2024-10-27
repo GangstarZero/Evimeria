@@ -74,5 +74,6 @@
         }
 
     </script>
+     @include('authentication.logout')
 
 @endsection

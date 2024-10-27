@@ -22,7 +22,7 @@
             </div>
             <button type="submit" class="btn" id="login">Login</button>
             <div class="register-link">
-                <p>Don't have an account? <a href={{ route('auth.register') }}>Register here</a></p>
+                <p>Don't have an account? <a href={{ route('auth.registerUserPage') }}>Register here</a></p>
             </div>
         </div>
     </div>

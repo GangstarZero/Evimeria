@@ -32,8 +32,11 @@ Route::controller(AuthController::class)
         Route::post('/login-user', 'loginUser')->name('auth.login-user');
 
         // Register
-        Route::get('/register', 'registerPage')->name('auth.register');
+        Route::get('/register/user', 'registerPage')->name('auth.registerUserPage');
         Route::post('/register-user', 'registerUser')->name('auth.register-user');
+        Route::get('/register/company', 'registerCompanyPage')->name('auth.registerCompanyPage');
+        Route::post('/register-company', 'registerCompany')->name('auth.register-company');
+
 
         // logout
         Route::post('/logout', 'logout')->name('auth.logout');

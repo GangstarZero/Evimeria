@@ -20,6 +20,10 @@ class AuthController
         return view('authentication.register');
     }
 
+    public function registerCompanyPage(){
+        return view('authentication.registerCompany');
+    }
+
     public function logout()
     {
         if (Auth::check()) {
@@ -55,6 +59,39 @@ class AuthController
             ], 422);
         }
 
+        return redirect()->route('login');
+    }
+
+    public function registerCompany(Request $req)
+    {
+        try{
+            $data = $req->only([
+                'name',
+                'address',
+                'description',
+                'email',
+                'password'
+            ]);
+
+            $exist = Company::where('email', '=', $data['email'])->first();
+
+            if ($exist != null) {
+                return response()->json([
+                    'status' => 1,
+                    'message' => 'Account Already Exists'
+                ], 422);
+            }
+
+            Company::create($data);
+
+
+        } catch(\Exception $e)
+        {
+            return response()->json([
+                'status' => 1,
+                'message' => $e
+            ], 422);
+        }
         return redirect()->route('login');
     }
 

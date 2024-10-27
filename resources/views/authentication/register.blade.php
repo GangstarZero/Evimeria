@@ -32,12 +32,10 @@
         <div class="register-link">
             Register an Account as Company?
             <br>
-            <a href="">
+            <a href={{ route('auth.registerCompanyPage') }}>
                 Register your company here
             </a>
         </div>
-
-
     </div>
 @endsection
 

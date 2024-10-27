@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
-
     // GUEST
     public function guestIndexPage(Request $req){
         $query = $req->query('query') ?? "";
@@ -24,10 +23,6 @@ class JobController extends Controller
         $job = Job::with(['title', 'company'])->find($id);
         return view('job/guest/detail', compact('job'));
     }
-
-
-
-
 
     // USER
     public function userIndexPage(Request $req){
@@ -43,10 +38,6 @@ class JobController extends Controller
         $job = Job::with(['title', 'company'])->find($id);
         return view('job/user/detail', compact('job'), compact('userId'));
     }
-
-
-
-
 
     // COMPANY
     public function companyIndexPage(Request $req){
@@ -70,18 +61,25 @@ class JobController extends Controller
         return view('job/company/add', compact('titleList'), compact('userId'));
     }
 
-
-
     public function insertJob(Request $req){
 
         $data = $req->only([
             'companyId',
             'titleId',
             'description',
-            'poster'
         ]);
-        Job::create($data);
 
+        if ($req->hasFile('poster') && $req->file('poster')->isValid()) {
+            $posterFile = $req->file('poster');
+            $posterPath = 'assets/poster';
+            $posterName = $posterFile->getClientOriginalName();
+            
+            $posterFile->move(public_path($posterPath), $posterName);
+            
+            $data['poster'] = "$posterPath/$posterName";
+        }
+
+        Job::create($data);
     }
 
     public function deleteJob($id){
