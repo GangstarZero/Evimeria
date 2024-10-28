@@ -40,13 +40,13 @@
     <div class="job-list-container" style="margin-top: 20px;">
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/IT_Logo.jpg') }}" />
             </div>
             IT
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/IT_Logo.png') }}" />
             </div>
             Admin
         </div>

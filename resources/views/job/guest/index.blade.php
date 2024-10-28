@@ -17,12 +17,15 @@
                 <button class="btn btn-outline-secondary" type="submit" id="searchButton">Search</button>
             </form>
         </div>
-    
+
         <div class="job-list-container">
-            @foreach($jobList as $job)
-                <a href="{{ route('job.guestDetailPage', ['id' => $job->id]) }}" class="job">
-                    <img src="{{ asset($job->poster) }}" />
-                </a>
+            @foreach ($jobList as $job)
+                <div class="job-box">
+                    <a href="{{ route('job.guestDetailPage', ['id' => $job->id]) }}" class="job">
+                        <img src="{{ asset($job->poster) }}" />
+                    </a>
+                    {{ $job->company->name }}
+                </div>
             @endforeach
         </div>
     </div>
