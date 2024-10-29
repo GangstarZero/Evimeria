@@ -1,15 +1,15 @@
 <nav class="container-fluid navbar-light p-3" style="background-color: #8B3333;">
     <div class="d-flex justify-content-between align-items-center w-100">
         <div>
-            <p class="fs-5">Logo</p>
+            <p class="fs-5" style="font-family: inter">Evimería</p>
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('dashboard.home') }}"
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('dashboard.home') }}"
                 style="{{ Route::is('dashboard.home') ? 'text-decoration: underline;' : '' }}">Home</a>
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.userIndexPage') }}"
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('job.userIndexPage') }}"
                 style="{{ Route::is('job.userIndexPage') ? 'text-decoration: underline;' : '' }}">Jobs</a>
-            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('apply_job.historyPage') }}"
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('apply_job.historyPage') }}"
                 style="{{ Route::is('apply_job.historyPage') ? 'text-decoration: underline;' : '' }}">History</a>
         </div>
 

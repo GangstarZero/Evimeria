@@ -1,23 +1,41 @@
 .detail-page {
-    padding: 2rem 5rem;
-}
-
-.detail-form-container {
+    padding: 5rem;
     display: flex;
     justify-content: center;
 }
 
-.company-detail, .apply-job-form {
-    width: 50%;
+.detail-form-container {
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 5rem;
 }
 
-/* .company-detail {
+.company-detail p{
+    font-size: 1.1rem;
+}
 
-} */
+.company-info{
+    display: flex;
+    gap: 20px;
+}
 
-.company-detail img {
-    width: 5rem;
-    height: 5rem;
+.company-detail {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9; 
+    padding: 30px;             
+    border-radius: 8px;        
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* width: 25rem; */
+    min-width: 25rem;
+    max-width: 50rem;
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 29rem;
+    max-height: 43rem;
+    border-radius: 13px;
 }
 
 .inputBoxContainer {
@@ -34,6 +52,33 @@
 .inputBoxContainer > input:focus {
     border-color: #007bff;
     outline: none;
+}
+
+/* .company-detail p {
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+} */
+
+.job-description {
+    display: block; 
+    white-space: normal; 
+    overflow-wrap: break-word; 
+    max-height: 30rem; 
+    overflow: auto;
+}
+
+.job-description::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar width */
+}
+
+.job-description::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+
+.job-description::-webkit-scrollbar-thumb {
+    background-color: gray; /* Customize scrollbar color */
+    border-radius: 4px; /* Rounded scroll thumb */
 }
 
 #button {

@@ -10,17 +10,19 @@
 
     @include('layout.userNavbar')
 
-    
+
     {{-- {{ $userId }} --}}
-    
+
     <div class="detail-page">
         <div class="detail-form-container">
-            <div class="company-detail">
+            <div class="company-info">
                 <img src="{{ asset($job->poster) }}" />
-                <p>Company Name: {{ $job->company->name }}</p>
-                <p>Job Title: {{ $job->title->name }}</p>
-                <p>Job Description: {{ $job->description }}</p>
-                <p>Date: {{ $job->created_at }}</p>
+                <div class="company-detail">
+                    <p><strong>Company Name:</strong> {{ $job->company->name }}</p>
+                    <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
+                    <p><strong>Posted:</strong> {{ $job->created_at }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong> {{ $job->description }}</p>
+                </div>
             </div>
             <div class="apply-job-form">
                 <form id="applyJobForm">
@@ -53,8 +55,7 @@
     @include('authentication.logout')
 
     <script>
-        
-        $('#applyJobForm').submit(function (e){
+        $('#applyJobForm').submit(function(e) {
             e.preventDefault()
 
             const data = {
@@ -71,19 +72,18 @@
             console.log(data)
 
             $.ajax({
-                url: '{{ route("apply_job.add") }}',
+                url: '{{ route('apply_job.add') }}',
                 type: 'POST',
                 data: data,
                 success: function(response, status, xhr) {
                     window.location.reload()
                     // window.location.href = '{{ route('dashboard.home') }}';
                 },
-                error: function(xhr){
+                error: function(xhr) {
                     console.log(xhr)
                 }
             })
         })
-
     </script>
 
 @endsection

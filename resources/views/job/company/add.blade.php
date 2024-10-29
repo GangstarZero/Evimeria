@@ -22,7 +22,7 @@
                 </select>
             </div>
             <div class="inputBoxContainer">
-                <input type="text" id="description" placeholder="Description" required />
+                <textarea id="description" placeholder="Description" required></textarea>
             </div>
             <div class="inputBoxContainer">
                 <label for="poster" class="uploadPoster">
