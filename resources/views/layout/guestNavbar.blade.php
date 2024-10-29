@@ -5,14 +5,14 @@
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('home') }}"
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('home') }}"
                 style="{{ Route::is('home') ? 'text-decoration: underline;' : '' }}">Home</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('job.guestIndexPage') }}"
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.guestIndexPage') }}"
                 style="{{ Route::is('job.guestIndexPage') ? 'text-decoration: underline;' : '' }}">Jobs</a>
         </div>
 
         <div>
-            <a class="btn btn-primary fs-4" href="{{ route('login') }}">Login</a>
+            <a class="btn btn-primary fs-5" href="{{ route('login') }}">Login</a>
         </div>
     </div>
 

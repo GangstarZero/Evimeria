@@ -5,16 +5,16 @@
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('dashboard.home') }}"
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('dashboard.home') }}"
                 style="{{ Route::is('dashboard.home') ? 'text-decoration: underline;' : '' }}">Home</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('job.userIndexPage') }}"
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('job.userIndexPage') }}"
                 style="{{ Route::is('job.userIndexPage') ? 'text-decoration: underline;' : '' }}">Jobs</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('apply_job.historyPage') }}"
+            <a class="nav-link fs-5 mx-4 text-white" href="{{ route('apply_job.historyPage') }}"
                 style="{{ Route::is('apply_job.historyPage') ? 'text-decoration: underline;' : '' }}">History</a>
         </div>
 
         <div>
-            <button type="submit" class="btn btn-danger" id="logout">Logout</button>
+            <button type="submit" class="btn btn-danger fs-5" id="logout">Logout</button>
         </div>
     </div>
 
