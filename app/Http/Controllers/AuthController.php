@@ -12,6 +12,9 @@ class AuthController
 {
     public function loginPage()
     {
+        if (Auth::check()) {
+            Auth::logout();
+        }
         return view('authentication.login');
     }
 
