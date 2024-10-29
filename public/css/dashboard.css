@@ -30,7 +30,8 @@
    align-items: center;
    width: 20vw;
    height: 30vh;
-   font-size: 1.1rem;
+   font-size: 1.2rem;
+   font-weight: bold;
 }
 
 .job {
@@ -43,8 +44,7 @@
 }
 
 .job img {
-   max-width: 10rem;
-   height: auto; 
-   border-radius: 0.5rem; 
-   object-fit: cover;
+      width: 200px; 
+      height: 200px; 
+      object-fit: contain; 
 }

@@ -34,55 +34,55 @@
     </div>
 
     <div class="subTitle-box">
-        Pick Your Jobs Now!
+        Pick Your Jobs Now
     </div>
 
     <div class="job-list-container" style="margin-top: 20px;">
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_Logo.jpg') }}" />
+                <img src="{{ asset('assets/web/IT_Logo.png') }}" />
             </div>
             IT
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_Logo.png') }}" />
+                <img src="{{ asset('assets/web/sales_Logo.png') }}" />
             </div>
             Admin
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/marketing_Logo.png') }}" />
             </div>
             Marketing
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/finance_Logo.png') }}" />
             </div>
             Finance
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/translator_Logo.png') }}" />
             </div>
             Translator
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/dataAnalyst_Logo.png') }}" />
             </div>
             Data Analyst
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/teacher_Logo.png') }}" />
             </div>
             Teacher
         </div>
         <div class="job-box">
             <div class="job">
-                <img src="{{ asset('assets/web/IT_logo.png') }}" />
+                <img src="{{ asset('assets/web/consultant_Logo.png') }}" />
             </div>
             Consultant
         </div>

@@ -44,6 +44,11 @@ textarea{
     border-radius: 4px;
 }
 
+textarea:focus{
+    border-color: #007bff;
+    outline: none;
+}
+
 input:focus {
     border-color: #007bff;
     outline: none;
