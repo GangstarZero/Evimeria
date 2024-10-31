@@ -23,7 +23,7 @@
             <div class="form-group">
                 <label for="username">Company Description</label>
                 <textarea id="description" name="description" rows="4" style="width: 100%; resize: none;" required></textarea>
-            </div>
+                </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" required>

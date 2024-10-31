@@ -10,9 +10,6 @@
 
     @include('layout.userNavbar')
 
-
-    {{-- {{ $userId }} --}}
-
     <div class="detail-page">
         <div class="detail-form-container">
             <div class="company-info">
@@ -25,6 +22,7 @@
                 </div>
             </div>
             <div class="apply-job-form">
+                <h2>Form Apply Job</h2>
                 <form id="applyJobForm">
                     <div class="inputBoxContainer">
                         <input type="hidden" id="jobId" value="{{ $job->id }}" />
