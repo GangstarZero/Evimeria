@@ -23,3 +23,7 @@
     </div>
 
 @endsection
+
+@section('extra-js')
+    @include('authentication.logout')
+@endsection

@@ -32,8 +32,11 @@ Route::controller(AuthController::class)
         Route::post('/login-user', 'loginUser')->name('auth.login-user');
 
         // Register
-        Route::get('/register', 'registerPage')->name('auth.register');
+        Route::get('/register/user', 'registerPage')->name('auth.registerUserPage');
         Route::post('/register-user', 'registerUser')->name('auth.register-user');
+        Route::get('/register/company', 'registerCompanyPage')->name('auth.registerCompanyPage');
+        Route::post('/register-company', 'registerCompany')->name('auth.register-company');
+
 
         // logout
         Route::post('/logout', 'logout')->name('auth.logout');
@@ -44,16 +47,12 @@ Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAl
 Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
 Route::put('/apply_job', [ApplyJobController::class, 'updateApplyJob'])->name('apply_job.edit');
 
-
-
-
-
 // USER
 Route::middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)
         ->name('dashboard.')
         ->group(function () {
-            Route::get('/dashboard', 'index')->name('home');
+            Route::get('user/dashboard', 'index')->name('home');
         });
 
     Route::controller(JobController::class)
@@ -65,10 +64,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/history', [ApplyJobController::class, 'historyPage'])->name('apply_job.historyPage');
 });
-
-
-
-
 
 // COMPANY
 Route::middleware(['auth:company'])->name('company.')->group(function () {
@@ -82,8 +77,7 @@ Route::middleware(['auth:company'])->name('company.')->group(function () {
             Route::get('company/job/{id}', 'companyDetailPage')->name('detailPage');
 
             // api route
-            Route::post('api/job','insertJob')->name('api.insert');
-            Route::delete('api/job/{id}','deleteJob')->name('api.delete');
+            Route::post('api/job', 'insertJob')->name('api.insert');
+            Route::delete('api/job/{id}', 'deleteJob')->name('api.delete');
         });
-    
 });

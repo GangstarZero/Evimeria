@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Login')
+@section('title', 'Register')
 
 @section('extra-css')
     <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
@@ -11,19 +11,38 @@
 
     <div class="main-wrapper">
         <div class="login-container">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <div class="form-group">
-                <label for="username">Email</label>
-                <input type="text" id="email" name="Email" required>
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Company Description</label>
+                <textarea id="description" name="description" rows="4" style="width: 100%; resize: none;" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn" id="login">Login</button>
+            <button type="submit" class="btn" id="register">Register</button>
             <div class="register-link">
-                <p>Don't have an account? <a href={{ route('auth.registerUserPage') }}>Register here</a></p>
+                <p>Already have an account? <a href={{ route('login') }}>Login here</a></p>
             </div>
+        </div>
+        <div class="register-link">
+            Register an Account as User?
+            <br>
+            <a href={{ route('auth.registerUserPage') }}>
+                Register here
+            </a>
         </div>
     </div>
 @endsection
@@ -31,21 +50,24 @@
 @section('extra-js')
     <script>
         $(document).ready(function() {
-            $('#login').click(function(e) {
+            $('#register').click(function(e) {
                 e.preventDefault();
 
                 const dataRegister = {
                     _token: '{{ csrf_token() }}',
+                    name: document.getElementById('username').value,
+                    address: document.getElementById('address').value,
+                    description: document.getElementById('description').value,
                     email: document.getElementById('email').value,
                     password: document.getElementById('password').value
                 }
 
                 $.ajax({
-                    url: '{{ route('auth.login-user') }}',
+                    url: '{{ route('auth.register-company') }}',
                     type: 'POST',
                     data: dataRegister,
                     success: function(response, status, xhr) {
-                        window.location.href = response.redirect_url;
+                        window.location.href = '{{ route('login') }}';
                     },
                     error: function(xhr, status, error) {
                         let errorMessage = 'An error occurred';

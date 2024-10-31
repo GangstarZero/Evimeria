@@ -20,4 +20,9 @@ class Company extends Authenticatable
         'address',
         'description'
     ];
+
+    protected $hidden = [
+        'remember_token'
+    ];
+
 }

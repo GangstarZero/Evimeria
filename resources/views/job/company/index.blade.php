@@ -23,7 +23,7 @@
                 <a href="{{ route('company.job.detailPage', ['id' => $job->id]) }}" class="job">
                     <img src="{{ asset($job->poster) }}" />
                 </a>
-                {{-- <button onclick="deleteButtonClick({{ $job->id }})">Delete</button> --}}
+                <button onclick="deleteButtonClick({{ $job->id }})">Delete</button>
             @endforeach
         </div>
     </div>
@@ -38,17 +38,18 @@
 
     <script>
 
-        // const deleteButtonClick = (id) => {
-        //     $.ajax({
-        //         url: `api/job/${id}`,
-        //         type: 'DELETE',
-        //         data:  { _token: '{{ csrf_token() }}' },
-        //         success: function(response, status, xhr) {
-        //             window.location.reload()
-        //         }
-        //     })   
-        // }
+        const deleteButtonClick = (id) => {
+            $.ajax({
+                url: `api/job/${id}`,
+                type: 'DELETE',
+                data:  { _token: '{{ csrf_token() }}' },
+                success: function(response, status, xhr) {
+                    window.location.reload()
+                }
+            })   
+        }
 
     </script>
+     @include('authentication.logout')
 
 @endsection

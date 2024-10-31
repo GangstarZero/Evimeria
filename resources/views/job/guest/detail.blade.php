@@ -9,16 +9,17 @@
 @section('content')
 
     @include('layout.guestNavbar')
-    
-    
+
     <div class="detail-page">
         <div class="detail-form-container">
-            <div class="company-detail">
+            <div class="company-info">
                 <img src="{{ asset($job->poster) }}" />
-                <p>Company Name: {{ $job->company->name }}</p>
-                <p>Job Title: {{ $job->title->name }}</p>
-                <p>Job Description: {{ $job->description }}</p>
-                <p>Date: {{ $job->created_at }}</p>
+                <div class="company-detail">
+                    <p><strong>Company Name:</strong> {{ $job->company->name }}</p>
+                    <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
+                    <p><strong>Posted:</strong> {{ $job->created_at }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong> {{ $job->description }}</p>
+                </div>
             </div>
         </div>
     </div>

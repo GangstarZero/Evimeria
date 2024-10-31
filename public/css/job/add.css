@@ -41,6 +41,21 @@
     outline: none;
 }
 
+.inputBoxContainer textarea {
+    width: 100%;
+    height: 400px; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none; 
+    overflow-y: auto;
+}
+
+.inputBoxContainer textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 #chooseFileText {
     pointer-events: none;
 }
