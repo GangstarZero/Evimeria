@@ -122,7 +122,7 @@ class AuthController
                 return response()->json([
                     'status' => 0,
                     'message' => 'Login successful!',
-                    'redirect_url' => route('company.home')
+                    'redirect_url' => route('company.job.indexPage')
                 ]);
             } else {
                 if ($data['password'] !== $userData['password']) {

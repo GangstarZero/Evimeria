@@ -10,7 +10,7 @@
 
     @include('layout.userNavbar')
 
-    <div class="my-5 px-5" style="padding-left: 80px; padding-right: 80px;"> <!-- Custom padding without container -->
+    <div class="my-5 px-5" style="padding-left: 80px; padding-right: 80px;"> 
         <div class="row align-items-stretch">
             <div class="col-md-7 p-0">
                 <img src="{{ asset('assets/web/dashboard-pic1.jpg') }}" alt="User Image" class="img-fluid h-100"

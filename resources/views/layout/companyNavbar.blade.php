@@ -1,14 +1,14 @@
 <nav class="container-fluid navbar-light p-3" style="background-color: #8B3333;">
     <div class="d-flex justify-content-between align-items-center w-100">
         <div>
-            <p class="fs-5">Logo</p>
+            <p class="" style="font-size: 1.3rem; color: white;">Evimería</p>
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.home') }}">Home</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.addPage') }}">Apply</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.indexPage') }}">Jobs</a>
-            {{-- <a class="nav-link fs-5 mx-4 text-white" href="">Contact</a> --}}
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.addPage') }}"
+                style="{{ Route::is('company.job.addPage') ? 'text-decoration: underline;' : '' }}">Apply</a>
+            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.indexPage') }}"
+                style="{{ Route::is('company.job.indexPage') ? 'text-decoration: underline;' : '' }}">Jobs</a>
         </div>
 
         <div>

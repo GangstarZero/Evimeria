@@ -1,7 +1,7 @@
 <nav class="container-fluid navbar-light p-3" style="background-color: #8B3333;">
     <div class="d-flex justify-content-between align-items-center w-100">
         <div>
-            <p class="" style="font-size: 1.5rem; color: white;">Evimería</p>
+            <p class="" style="font-size: 1.3rem; color: white;">Evimería</p>
         </div>
 
         <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x" style="margin-bottom: 3px">
