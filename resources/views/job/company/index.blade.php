@@ -21,7 +21,7 @@
         <div class="job-list-container">
             @foreach ($jobList as $job)
                 <div class="job-box">
-                    <a href="{{ route('job.guestDetailPage', ['id' => $job->id]) }}" class="job">
+                    <a href="{{ route('company.job.detailPage', ['id' => $job->id]) }}" class="job">
                         <img src="{{ asset($job->poster) }}" />
                     </a>
                     {{-- {{ $job->company->name }} --}}

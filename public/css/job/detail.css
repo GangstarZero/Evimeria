@@ -62,10 +62,10 @@ img {
 } */
 
 .job-description {
-    display: block; 
-    white-space: normal; 
-    overflow-wrap: break-word; 
-    max-height: 30rem; 
+    /* display: block;  */
+    /* white-space: normal;  */
+    /* overflow-wrap: break-word;  */
+    max-height: 27.7rem; 
     overflow: auto;
 }
 

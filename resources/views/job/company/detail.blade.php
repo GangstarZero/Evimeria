@@ -12,17 +12,22 @@
 
     <div class="detail-page">
         <div class="detail-form-container">
-            <div class="company-detail">
+            <div class="company-info">
                 <img src="{{ asset($job->poster) }}" />
-                <p>Company Name: {{ $job->company->name }}</p>
-                <p>Job Title: {{ $job->title->name }}</p>
-                <p>Job Description: {{ $job->description }}</p>
-                <p>Date: {{ $job->created_at }}</p>
+                <div class="company-detail">
+                    <p><strong>Company Name:</strong> {{ $job->company->name }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Company Description:</strong>
+                        {{ $job->company->description }}</p>
+                    <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
+                    <p><strong>Posted:</strong> {{ $job->created_at->format('d F Y') }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong>
+                        {{ $job->description }}</p>
+                </div>
             </div>
         </div>
 
         <div>
-            @foreach($applyJobList as $applyJob)
+            @foreach ($applyJobList as $applyJob)
                 <div class="apply-job">
                     <div>
                         <p>Name: {{ $applyJob->fullName }}</p>
@@ -46,17 +51,20 @@
     @include('authentication.logout')
 
     <script>
-
         const acceptButtonClick = (id) => {
 
             $.ajax({
-                url: '{{ route("apply_job.edit") }}',
+                url: '{{ route('apply_job.edit') }}',
                 type: 'PUT',
-                data:  { _token: '{{ csrf_token() }}', jobId: parseInt({{ $job->id }}), status: "Accepted" },
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    jobId: parseInt({{ $job->id }}),
+                    status: "Accepted"
+                },
                 success: function(response, status, xhr) {
                     window.location.reload()
                 },
-                error: function(xhr){
+                error: function(xhr) {
                     console.log(xhr)
                 }
             })
@@ -64,16 +72,19 @@
 
         const rejectButtonClick = (id) => {
             $.ajax({
-                url: '{{ route("apply_job.edit") }}',
+                url: '{{ route('apply_job.edit') }}',
                 type: 'PUT',
-                data:  { _token: '{{ csrf_token() }}', id: parseInt(id), status: "Rejected" },
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: parseInt(id),
+                    status: "Rejected"
+                },
                 success: function(response, status, xhr) {
                     window.location.reload()
                 }
             })
         }
-
     </script>
-     @include('authentication.logout')
+    @include('authentication.logout')
 
 @endsection
