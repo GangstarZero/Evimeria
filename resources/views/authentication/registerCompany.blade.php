@@ -1,6 +1,6 @@
 @extends('layout.master')
 
-@section('title', 'Register')
+@section('title', 'Company Register')
 
 @section('extra-css')
     <link rel="stylesheet" href="{{ asset('css/authentication.css') }}">
@@ -11,7 +11,7 @@
 
     <div class="main-wrapper">
         <div class="login-container">
-            <h2>Register</h2>
+            <h2>Company Register</h2>
             <div class="form-group">
                 <label for="username">Name</label>
                 <input type="text" id="username" name="username" required>

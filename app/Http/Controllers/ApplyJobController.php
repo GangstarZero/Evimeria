@@ -30,10 +30,8 @@ class ApplyJobController extends Controller
     }
 
     public function updateApplyJob(Request $req){
-
         $applyJob = ApplyJob::find($req->id);
         $applyJob->status = $req->status; 
         $applyJob->save();
-
     }
 }

@@ -17,6 +17,9 @@
                     <p>Company: {{ $applyJob->job->company->name }}</p>
                     <p>Job: {{ $applyJob->job->title->name }}</p>
                     <p>Status: {{ $applyJob->status }}</p>
+                    <a href="{{ route('job.userDetailPage', ['id' => $applyJob->job->id]) }}" class="job-details-btn">
+                        View Job Details
+                    </a>
                 </div>
             @endforeach
         </div>

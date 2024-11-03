@@ -24,23 +24,23 @@
                         {{ $job->description }}</p>
                 </div>
             </div>
-        </div>
-
-        <div>
-            @foreach ($applyJobList as $applyJob)
-                <div class="apply-job">
-                    <div>
-                        <p>Name: {{ $applyJob->fullName }}</p>
-                        <p>Phone Number: {{ $applyJob->phoneNumber }}</p>
-                        <p>Salary Expectation: {{ $applyJob->salaryExpectation }}</p>
-                        <p>CV: {{ $applyJob->cv }}</p>
+            <div>
+                @foreach ($applyJobList as $applyJob)
+                    <div class="apply-job">
+                        <div>
+                            <p>Name: {{ $applyJob->fullName }}</p>
+                            <p>Phone Number: {{ $applyJob->phoneNumber }}</p>
+                            <p>Salary Expectation: {{ $applyJob->salaryExpectation }}</p>
+                            <p>CV: {{ $applyJob->cv }}</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary"
+                                onclick="acceptButtonClick({{ $applyJob->id }})">Accept</button>
+                            <button class="btn btn-danger" onclick="rejectButtonClick({{ $applyJob->id }})">Reject</button>
+                        </div>
                     </div>
-                    <div>
-                        <button class="btn btn-primary" onclick="acceptButtonClick({{ $applyJob->id }})">Accept</button>
-                        <button class="btn btn-danger" onclick="rejectButtonClick({{ $applyJob->id }})">Reject</button>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 
