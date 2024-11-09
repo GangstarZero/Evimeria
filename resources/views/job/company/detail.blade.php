@@ -47,9 +47,6 @@
 @endsection
 
 @section('extra-js')
-
-    @include('authentication.logout')
-
     <script>
         const acceptButtonClick = (id) => {
 
@@ -58,7 +55,7 @@
                 type: 'PUT',
                 data: {
                     _token: '{{ csrf_token() }}',
-                    jobId: parseInt({{ $job->id }}),
+                    id: parseInt(id),
                     status: "Accepted"
                 },
                 success: function(response, status, xhr) {
@@ -86,5 +83,4 @@
         }
     </script>
     @include('authentication.logout')
-
 @endsection
