@@ -1,14 +1,20 @@
-<nav class="container-fluid navbar-light p-3" style="background-color: #8B3333;">
-    <div class="d-flex justify-content-between align-items-center w-100">
-        <div>
-            <p class="" style="font-size: 1.3rem; color: white;">Evimería</p>
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #8B3333;">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <p class="mb-0" style="font-size: 1.3rem; color: white;">Evimería</p>
         </div>
 
-        <div class="d-none d-md-flex justify-content-center position-absolute start-50 translate-middle-x">
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.addPage') }}"
-                style="{{ Route::is('company.job.addPage') ? 'text-decoration: underline;' : '' }}">Apply</a>
-            <a class="nav-link fs-4 mx-4 text-white" href="{{ route('company.job.indexPage') }}"
-                style="{{ Route::is('company.job.indexPage') ? 'text-decoration: underline;' : '' }}">Jobs</a>
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('company.job.addPage') ? 'text-decoration-underline' : '' }}"
+                        href="{{ route('company.job.addPage') }}">Apply</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('company.job.indexPage') ? 'text-decoration-underline' : '' }}"
+                        href="{{ route('company.job.indexPage') }}">Jobs</a>
+                </li>
+            </ul>
         </div>
 
         <div>
@@ -16,9 +22,10 @@
         </div>
     </div>
 
-    <div class="d-flex d-md-none flex-column align-items-center">
-        <a class="nav-link fs-4 text-white" href="">Home</a>
-        <a class="nav-link fs-4 text-white" href="">Apply</a>
-        <a class="nav-link fs-4 text-white" href="">Jobs</a>
+    <div class="d-flex d-md-none flex-column align-items-center mt-3">
+        <a class="nav-link fs-4 text-white {{ Route::is('company.job.addPage') ? 'text-decoration-underline' : '' }}"
+            href="{{ route('company.job.addPage') }}">Apply</a>
+        <a class="nav-link fs-4 text-white {{ Route::is('company.job.indexPage') ? 'text-decoration-underline' : '' }}"
+            href="{{ route('company.job.indexPage') }}">Jobs</a>
     </div>
 </nav>
