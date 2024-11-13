@@ -1,3 +1,62 @@
 .history-page {
     padding: 2rem 5rem;
 }
+
+.history-page {
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.apply-job {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.apply-job p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.apply-job p:first-child {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.apply-job p:nth-child(2) {
+    font-style: italic;
+    color: #555;
+}
+
+.job-info p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.job-details-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+.job-details-btn:hover {
+    background-color: #0056b3;
+}

@@ -22,6 +22,10 @@
                 </select>
             </div>
             <div class="inputBoxContainer">
+                <p><strong>Guidelines for Job Description:</strong> Please include the main purpose of the role, key
+                    responsibilities, required skills and qualifications, and any additional information about company
+                    culture, benefits, or growth opportunities. Aim to give candidates a clear understanding of the role and
+                    its expectations.</p>
                 <textarea id="description" placeholder="Description" required></textarea>
             </div>
             <div class="inputBoxContainer">
@@ -30,15 +34,10 @@
                     <img src="#" id="file-preview">
                 </label>
                 <input type="file" id="poster" required />
-                {{-- <img src="#" alt="Preview Uploaded Image" id="file-preview"> --}}
             </div>
             <button type="submit" id="insertButton" class="btn btn-primary">Insert</button>
         </form>
     </div>
-
-
-    {{-- <input type="file" id="fileInput">
-    <button id="downloadBtn">Download File</button> --}}
 
 @endsection
 

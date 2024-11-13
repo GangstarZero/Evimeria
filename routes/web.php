@@ -67,8 +67,6 @@ Route::middleware(['auth'])->group(function () {
 
 // COMPANY
 Route::middleware(['auth:company'])->name('company.')->group(function () {
-    Route::get('/company/dashboard', [CompanyDashboardController::class, 'index'])->name('home');
-
     Route::controller(JobController::class)
         ->name('job.')
         ->group(function () {

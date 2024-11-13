@@ -21,26 +21,26 @@
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
+   gap: 2rem 4rem; 
 }
 
-.job-box{
+.job-box {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 20vw;
+   flex-basis: 20%; 
+   max-width: 350px; 
    height: 30vh;
    font-size: 1.2rem;
    font-weight: bold;
+   box-sizing: border-box;
 }
 
 .job {
    border-radius: 0.5rem;
    padding: 1rem 1.5rem;
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
 }
 
 .job img {

@@ -15,15 +15,33 @@ class AuthController
         if (Auth::check()) {
             Auth::logout();
         }
+
+        if (Auth::guard('company')->check()) {
+            Auth::guard('company')->logout();
+        }
         return view('authentication.login');
     }
 
     public function registerPage()
     {
+        if (Auth::check()) {
+            Auth::logout();
+        }
+        if (Auth::guard('company')->check()) {
+            Auth::guard('company')->logout();
+        }
         return view('authentication.register');
     }
 
-    public function registerCompanyPage(){
+    public function registerCompanyPage()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+        }
+
+        if (Auth::guard('company')->check()) {
+            Auth::guard('company')->logout();
+        }
         return view('authentication.registerCompany');
     }
 
@@ -33,6 +51,9 @@ class AuthController
             Auth::logout();
         }
 
+        if (Auth::guard('company')->check()) {
+            Auth::guard('company')->logout();
+        }
         return view('index');
     }
 
@@ -67,7 +88,7 @@ class AuthController
 
     public function registerCompany(Request $req)
     {
-        try{
+        try {
             $data = $req->only([
                 'name',
                 'address',
@@ -86,10 +107,7 @@ class AuthController
             }
 
             Company::create($data);
-
-
-        } catch(\Exception $e)
-        {
+        } catch (\Exception $e) {
             return response()->json([
                 'status' => 1,
                 'message' => $e
@@ -122,7 +140,7 @@ class AuthController
                 return response()->json([
                     'status' => 0,
                     'message' => 'Login successful!',
-                    'redirect_url' => route('company.home')
+                    'redirect_url' => route('company.job.indexPage')
                 ]);
             } else {
                 if ($data['password'] !== $userData['password']) {
