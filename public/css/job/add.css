@@ -1,5 +1,17 @@
+.center-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .addPage {
-    padding: 2rem 5rem;
+    width: 70%; /* Adjust as necessary */
+    max-width: 1000px; /* Limits form width on large screens */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .inputBoxContainer {
@@ -62,12 +74,14 @@
 
 #file-preview {
     display: none;
+    max-width: 29rem;
+    max-height: 43rem;
+    border-radius: 13px;
 }
 
 #insertButton {
     width: 100%;
 }
-
 
 .uploadPoster {
     width: 100%;
