@@ -10,8 +10,10 @@
 
     @include('layout.guestNavbar')
 
+
     <div class="detail-page">
         <div class="detail-form-container">
+            <div class="company-info">
             <div class="company-info">
                 <img src="{{ asset($job->poster) }}" />
                 <div class="company-detail">

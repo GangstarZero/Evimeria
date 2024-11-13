@@ -23,6 +23,7 @@
 
         <div>
             <button type="submit" class="btn btn-danger fs-5" id="logout">Logout</button>
+            <button type="submit" class="btn btn-danger fs-5" id="logout">Logout</button>
         </div>
     </div>
 </nav>
