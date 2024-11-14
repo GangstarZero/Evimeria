@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ChatInserted;
 use App\Models\Chat;
 use App\Models\ChatRoom;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ class ChatDetailController extends Controller
             'is_sender_user',
             'content'
         ]);
+        broadcast(new ChatInserted($chat))->toOthers();
         Chat::create($chat);
     }
 }

@@ -30,6 +30,16 @@
     @include('authentication.logout')
 
     <script>
+
+        const pusher  = new Pusher('{{ config('broadcasting.connections.pusher.key') }}', {cluster: 'ap1'});
+        const channel = pusher.subscribe('public');
+        
+        //Receive messages
+        channel.bind('chat', function (data) {
+            console.log(1)
+            console.log(data)
+            $('#chatList').append(`<li>{{ $chat_room->company->name }}: ${data.chat.content}</li>`)
+        });
         
         $('#submitButton').click(() => {
             const data = {
@@ -42,6 +52,9 @@
             $.ajax({
                 url: '{{ route('api.chat.create') }}',
                 type: 'POST',
+                headers: {
+                    'X-Socket-Id': pusher.connection.socket_id
+                },
                 data: data,
                 success: function(response, status, xhr) {
                     $('#chatList').append(`<li>{{ $chat_room->user->name }}: ${document.getElementById('chatValue').value}</li>`)
@@ -52,6 +65,31 @@
                 }
             })
         })
+
+        // -----
+    
+        // $('#form').submit((e) => {
+        //     e.preventDefault()
+    
+        //     $.ajax({
+        //         url: '/api/food',
+        //         type: 'POST',
+        //         headers: {
+        //             'X-Socket-Id': pusher.connection.socket_id
+        //         },
+        //         data: {
+        //             _token: '{{ csrf_token() }}',
+        //             name: document.getElementById('foodName').value
+        //         },
+        //         success: function(response, status, xhr) {
+        //             $('#list').append(`<li>${document.getElementById('foodName').value}</li>`)
+        //             document.getElementById('foodName').value = ""
+        //         },
+        //         error: function(xhr) {
+        //             console.log(xhr)
+        //         }
+        //     })
+        // })
 
     </script>
 
