@@ -14,6 +14,10 @@
                     <a class="nav-link fs-4 mx-4 text-white {{ Route::is('company.job.indexPage') ? 'text-decoration-underline' : '' }}"
                         href="{{ route('company.job.indexPage') }}">Jobs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('company.chat') || Route::is('company.chatDetail') ? 'text-decoration-underline' : '' }}"
+                        href="{{ route('company.chat') }}">Chat</a>
+                </li>
             </ul>
         </div>
 
@@ -27,5 +31,7 @@
             href="{{ route('company.job.addPage') }}">Apply</a>
         <a class="nav-link fs-4 text-white {{ Route::is('company.job.indexPage') ? 'text-decoration-underline' : '' }}"
             href="{{ route('company.job.indexPage') }}">Jobs</a>
+        <a class="nav-link fs-4 text-white {{ Route::is('company.chat') || Route::is('company.chatDetail') ? 'text-decoration-underline' : '' }}"
+            href="{{ route('company.chat') }}">Chat</a>
     </div>
 </nav>
