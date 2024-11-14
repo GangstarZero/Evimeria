@@ -6,6 +6,8 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\ApplyJobController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\ChatDetailController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CompanyDashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -47,6 +49,9 @@ Route::get('/title', [TitleController::class, 'getAllTitle'])->name('title.getAl
 Route::post('/apply_job', [ApplyJobController::class, 'insertApplyJob'])->name('apply_job.add');
 Route::put('/apply_job', [ApplyJobController::class, 'updateApplyJob'])->name('apply_job.edit');
 
+Route::post('/api/chat', [ChatDetailController::class, 'createChat'])->name('api.chat.create');
+Route::post('/api/chat_room', [ChatController::class, 'createChatRoom'])->name('api.chat_room.create');
+
 // USER
 Route::middleware(['auth'])->group(function () {
     Route::controller(DashboardController::class)
@@ -63,6 +68,9 @@ Route::middleware(['auth'])->group(function () {
         });
 
     Route::get('/history', [ApplyJobController::class, 'historyPage'])->name('apply_job.historyPage');
+    
+    Route::get('/chat', [ChatController::class, 'indexUser'])->name('chat');
+    Route::get('/chat/{id}', [ChatDetailController::class, 'indexUser'])->name('chatDetail');
 });
 
 // COMPANY
@@ -79,4 +87,7 @@ Route::middleware(['auth:company'])->name('company.')->group(function () {
             Route::post('api/job', 'insertJob')->name('api.insert');
             Route::post('api/updateJob', 'updateJob')->name('api.update');
         });
+
+    Route::get('company/chat', [ChatController::class, 'indexCompany'])->name('chat');
+    Route::get('company/chat/{id}', [ChatDetailController::class, 'indexCompany'])->name('chatDetail');
 });

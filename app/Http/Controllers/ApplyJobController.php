@@ -11,7 +11,7 @@ class ApplyJobController extends Controller
     public function historyPage(){
         $userId = Auth::user()->id;
         $applyJobList = ApplyJob::with(['job.title', 'job.company'])->where('userId', $userId)->get();
-        return view('history', compact('applyJobList'));
+        return view('user.history', compact('applyJobList'));
     }
 
     public function insertApplyJob(Request $req){

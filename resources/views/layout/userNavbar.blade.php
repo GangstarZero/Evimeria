@@ -11,12 +11,16 @@
                         href="{{ route('dashboard.home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('job.userIndexPage') ? 'text-decoration-underline' : '' }}"
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('job.userIndexPage') || Route::is('job.userDetailPage') ? 'text-decoration-underline' : '' }}"
                         href="{{ route('job.userIndexPage') }}">Jobs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fs-4 mx-4 text-white {{ Route::is('apply_job.historyPage') ? 'text-decoration-underline' : '' }}"
                         href="{{ route('apply_job.historyPage') }}">History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('chat') || Route::is('chatDetail') ? 'text-decoration-underline' : '' }}"
+                        href="{{ route('chat') }}">Chat</a>
                 </li>
             </ul>
         </div>
