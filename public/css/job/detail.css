@@ -2,15 +2,13 @@
     padding: 5rem;
     display: flex;
     justify-content: center;
-    padding: 5rem;
-    display: flex;
-    justify-content: center;
 }
 
 .detail-form-container {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    align-items: center;
+    gap: 2rem;
 }
 
 .company-detail p{
@@ -20,7 +18,7 @@
 .company-info{
     display: flex;
     gap: 20px;
-    max-height: 48rem;
+    max-height: 50rem;
 }
 
 .company-detail {
@@ -33,6 +31,20 @@
     min-width: 30rem;
     max-width: 50rem;
     overflow-wrap: break-word;
+}
+
+.company-detail button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.company-detail button:hover {
+    background-color: #0056b3;
 }
 
 img {
@@ -57,13 +69,22 @@ img {
     outline: none;
 }
 
+.job-description-textarea {
+    height: 23rem; 
+    overflow-y: auto; 
+    padding-right: 5px; 
+    width: 100%; 
+    resize: none; 
+    border-radius: 4px; 
+}
+
 .company-description {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    max-height: 15rem !important; 
+    max-height: 15rem; 
     overflow: auto; 
-    padding-right: 5px; 
+    padding-right: 5px;
 }
 
 .job-description {
@@ -132,4 +153,49 @@ img {
 .apply-job button:hover {
     opacity: 0.9;
     transition: opacity 0.2s;
+}
+
+.inputBoxContainer textarea {
+    width: 100%;
+    height: 400px; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none; 
+    overflow-y: auto;
+}
+
+.inputBoxContainer textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#chooseFileText {
+    pointer-events: none;
+}
+
+#file-preview {
+    width: 100%; /* Set to 100% to match the parent container width */
+    max-width: 29rem; /* Set max width to match the .job-image */
+    max-height: 43rem; /* Optional, set to limit the height */
+    border-radius: 13px;
+    object-fit: cover; /* Ensure the image scales proportionally */
+    display: none;
+}
+
+.uploadPoster {
+    width: 100%;
+    border: dashed grey 1.5px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: grey;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#poster {
+    display: none;
 }

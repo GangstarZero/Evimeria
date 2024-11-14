@@ -15,16 +15,17 @@
             <div class="company-info">
                 <img src="{{ asset($job->poster) }}" />
                 <div class="company-detail">
-                    <p><strong>Company Name:</strong> {{ $job->company->name }}</p>
-                    <p class="company-description" style="white-space: pre-line;"><strong>Company Description:</strong> {{ $job->company->description }}</p>
+                    <p><strong>Company Name:</strong>{{ $job->company->name }}</p>
+                    <p class="company-description" style="white-space: pre-line;"><strong>Company Description:</strong>{{ $job->company->description }}</p>
                     <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
                     <p><strong>Posted:</strong> {{ $job->created_at->format('d F Y') }}</p>
-                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong> {{ $job->description }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong>
+                        {{ $job->description }}</p>
                 </div>
             </div>
-            <div class="apply-job-form">
-                <h2>Form Apply Job</h2>
-                <form id="applyJobForm">
+            <div class="apply-job-form" style="width: 40rem">
+                <h2 class="d-flex justify-content-center">Form Apply Job</h2>
+                <form id="applyJobForm" class="d-flex justify-content-center flex-column">
                     <div class="inputBoxContainer">
                         <input type="hidden" id="jobId" value="{{ $job->id }}" />
                     </div>

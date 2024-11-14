@@ -31,7 +31,7 @@
                     <textarea id="description" placeholder="Description" required></textarea>
                 </div>
                 <div class="inputBoxContainer">
-                <p><strong>Recruitment Poster:</strong></p>
+                    <p><strong>Recruitment Poster:</strong></p>
                     <label for="poster" class="uploadPoster">
                         <label id="chooseFileText">Choose a File</label>
                         <img src="#" id="file-preview">

@@ -73,9 +73,10 @@ Route::middleware(['auth:company'])->name('company.')->group(function () {
             Route::get('company/job', 'companyIndexPage')->name('indexPage');
             Route::get('company/job/add', 'companyAddPage')->name('addPage');
             Route::get('company/job/{id}', 'companyDetailPage')->name('detailPage');
+            Route::get('company/job/edit/{id}', 'companyEditPage')->name('editPage');
 
             // api route
             Route::post('api/job', 'insertJob')->name('api.insert');
-            Route::delete('api/job/{id}', 'deleteJob')->name('api.delete');
+            Route::post('api/updateJob', 'updateJob')->name('api.update');
         });
 });
