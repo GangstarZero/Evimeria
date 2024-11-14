@@ -13,7 +13,7 @@
     <div class="center-wrap">
         <div class="addPage">
             <form id="addJobForm">
-                <h3>Insert Job</h3>
+                <h3 style="text-align: center"><strong>Add New Job</strong></h3>
                 <div class="inputBoxContainer">
                     <select id="titleDdl" required>
                         <option hidden></option>
