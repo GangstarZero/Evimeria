@@ -34,6 +34,6 @@
 
 @section('extra-js')
 
-    @include('job.company.searchJob')
+    @include('job.searchJob')
 
 @endsection

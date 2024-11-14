@@ -37,7 +37,7 @@
 
     @include('authentication.logout')
 
-    @include('job.company.searchJob')
+    @include('job.searchJob')
 
     <script>
         const deleteButtonClick = (id) => {

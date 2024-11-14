@@ -36,6 +36,6 @@
 
     @include('authentication.logout')
 
-    @include('job.company.searchJob')
+    @include('job.searchJob')
 
 @endsection
