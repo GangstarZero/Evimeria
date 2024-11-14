@@ -31,11 +31,11 @@ CREATE TABLE job (
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     PRIMARY KEY(id),
-    CONSTRAINT `fk_company_id`
+    CONSTRAINT `fk_job_company_id`
     	FOREIGN KEY (companyId)
     	REFERENCES company (id)
     	ON DELETE CASCADE,
-    CONSTRAINT `fk_title_id`
+    CONSTRAINT `fk_job_title_id`
     	FOREIGN KEY (titleId)
     	REFERENCES title (id)
     	ON DELETE CASCADE
@@ -53,11 +53,11 @@ CREATE TABLE apply_job (
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT `fk_job_id`
+    CONSTRAINT `fk_apply_job_job_id`
     	FOREIGN KEY (jobId)
     	REFERENCES job (id)
     	ON DELETE CASCADE,
-    CONSTRAINT `fk_user_id`
+    CONSTRAINT `fk_apply_job_user_id`
     	FOREIGN KEY (userId)
     	REFERENCES user (id)
     	ON DELETE CASCADE
@@ -65,34 +65,30 @@ CREATE TABLE apply_job (
 
 CREATE TABLE chat_room (
 	id INT AUTO_INCREMENT NOT NULL,
-    userId1 INT NOT NULL,
-    userId2 INT NOT NULL,
+    user_id INT NOT NULL,
+    company_id INT NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT `fk_userid1`
-    	FOREIGN KEY (userId1)
+    CONSTRAINT `fk_chat_room_user_id`
+    	FOREIGN KEY (user_id)
     	REFERENCES user (id)
     	ON DELETE CASCADE,
-    CONSTRAINT `fk_userid2`
-    	FOREIGN KEY (userId2)
-    	REFERENCES user (id)
+    CONSTRAINT `fk_chat_room_company_id`
+    	FOREIGN KEY (company_id)
+    	REFERENCES company (id)
     	ON DELETE CASCADE
 );
 
 CREATE TABLE chat (
 	id INT AUTO_INCREMENT NOT NULL,
-    chatRoomId INT NOT NULL,
-    senderId INT NOT NULL,
+    chat_room_id INT NOT NULL,
+    is_sender_user BOOLEAN NOT NULL,
     content VARCHAR(1000) NOT NULL,
     created_at DATETIME NOT NULL,
     updated_at DATETIME NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT `fk_chat_room_id`
-    	FOREIGN KEY (chatRoomId)
+    CONSTRAINT `fk_chat_chat_room_id`
+    	FOREIGN KEY (chat_room_id)
     	REFERENCES chat_room (id)
-    	ON DELETE CASCADE,
-    CONSTRAINT `fk_sender_id`
-    	FOREIGN KEY (senderId)
-    	REFERENCES user (id)
     	ON DELETE CASCADE
 );
 
@@ -114,3 +110,8 @@ INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at
 INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 1, 'desc4', 'assets/poster/naruto.jpg', NOW(), NOW());
 INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 2, 'desc5', 'assets/poster/spongebob.webp', NOW(), NOW());
 INSERT INTO job (companyId, titleId, description, poster, created_at, updated_at) VALUES (2, 3, 'desc6', 'assets/poster/patrick.jpg', NOW(), NOW());
+
+INSERT INTO chat_room (user_id, company_id) VALUES (1, 1);
+
+INSERT INTO chat (chat_room_id, is_sender_user, content) VALUES (1, 1, 'halo');
+INSERT INTO chat (chat_room_id, is_sender_user, content) VALUES (1, 0, 'hai');

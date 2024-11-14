@@ -75,11 +75,29 @@
                 type: 'POST',
                 data: data,
                 success: function(response, status, xhr) {
-                    window.location.reload()
+                    // window.location.reload()
                     // window.location.href = '{{ route('dashboard.home') }}';
                 },
                 error: function(xhr) {
                     console.log(xhr)
+                }
+            })
+
+
+            $.ajax({
+                url: '{{ route('api.chat_room.create') }}',
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    user_id: {{ $userId }},
+                    company_id: {{ $job->company->id }}
+                },
+                success: function(response, status, xhr) {
+                    window.location.reload()
+                    // window.location.href = '{{ route('dashboard.home') }}';
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseJSON.message)
                 }
             })
         })
