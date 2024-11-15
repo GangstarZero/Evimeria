@@ -11,57 +11,72 @@ use Illuminate\Support\Facades\Auth;
 class JobController extends Controller
 {
     // GUEST
-    public function guestIndexPage(Request $req){
+    public function guestIndexPage(Request $req)
+    {
         $query = $req->query('query') ?? "";
-        $jobList = Job::whereHas('title', function ($job) use ($query){
+        $jobList = Job::whereHas('title', function ($job) use ($query) {
             $job->where('name', 'LIKE', '%' . $query . '%');
         })->get();
-        return view('job/guest/index', compact('jobList'), compact('query'));
+        return view('job/guest/index', compact('jobList', 'query'));
     }
 
-    public function guestDetailPage($id){
+    public function guestDetailPage($id)
+    {
         $job = Job::with(['title', 'company'])->find($id);
         return view('job/guest/detail', compact('job'));
     }
 
     // USER
-    public function userIndexPage(Request $req){
+    public function userIndexPage(Request $req)
+    {
         $query = $req->query('query') ?? "";
-        $jobList = Job::whereHas('title', function ($job) use ($query){
+        $jobList = Job::whereHas('title', function ($job) use ($query) {
             $job->where('name', 'LIKE', '%' . $query . '%');
         })->get();
-        return view('job/user/index', compact('jobList'), compact('query'));
+        return view('job/user/index', compact('jobList', 'query'));
     }
 
-    public function userDetailPage($id){
+    public function userDetailPage($id)
+    {
         $userId = Auth::user()->id;
         $job = Job::with(['title', 'company'])->find($id);
-        return view('job/user/detail', compact('job'), compact('userId'));
+        return view('job/user/detail', compact('job', 'userId'));
     }
 
     // COMPANY
-    public function companyIndexPage(Request $req){
+    public function companyIndexPage(Request $req)
+    {
         $userId = Auth::user()->id;
         $query = $req->query('query') ?? "";
-        $jobList = Job::whereHas('title', function ($job) use ($query){
+        $jobList = Job::whereHas('title', function ($job) use ($query) {
             $job->where('name', 'LIKE', '%' . $query . '%');
         })->where('companyId', $userId)->get();
-        return view('job/company/index', compact('jobList'), compact('query'));
+        return view('job/company/index', compact('jobList', 'query'));
     }
 
-    public function companyDetailPage($id){
+    public function companyDetailPage($id)
+    {
         $job = Job::with(['title', 'company'])->find($id);
         $applyJobList = ApplyJob::where('jobId', $id)->where('status', 'Applied')->get();
-        return view('job/company/detail', compact('job'), compact('applyJobList'));
+        return view('job/company/detail', compact('job', 'applyJobList'));
     }
 
-    public function companyAddPage(){
+    public function companyAddPage()
+    {
         $userId = Auth::user()->id;
         $titleList = Title::get();
-        return view('job/company/add', compact('titleList'), compact('userId'));
+        return view('job/company/add', compact('titleList', 'userId'));
     }
 
-    public function insertJob(Request $req){
+    public function companyEditPage($id)
+    {
+        $job = Job::with(['title', 'company'])->find($id);
+
+        return view('job/company/edit', compact('job'));
+    }
+
+    public function insertJob(Request $req)
+    {
 
         $data = $req->only([
             'companyId',
@@ -73,19 +88,19 @@ class JobController extends Controller
             $posterFile = $req->file('poster');
             $posterPath = 'assets/poster';
             $posterName = $posterFile->getClientOriginalName();
-            
+
             $posterFile->move(public_path($posterPath), $posterName);
-            
+
             $data['poster'] = "$posterPath/$posterName";
         }
 
         Job::create($data);
     }
 
-    public function deleteJob($id){
+    public function updateJob(Request $req)
+    {
+        $job = Job::with(['title', 'company'])->find($req->jobId);
 
-        $job = Job::find($id);
-        $job->delete();
-
+        
     }
 }

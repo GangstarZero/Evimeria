@@ -24,7 +24,7 @@
                     <a href="{{ route('job.guestDetailPage', ['id' => $job->id]) }}" class="job">
                         <img src="{{ asset($job->poster) }}" />
                     </a>
-                    {{ $job->company->name }}
+                    <p class="company-name">{{ $job->company->name }}</p>
                 </div>
             @endforeach
         </div>
@@ -34,6 +34,6 @@
 
 @section('extra-js')
 
-    @include('job.company.searchJob')
+    @include('job.searchJob')
 
 @endsection

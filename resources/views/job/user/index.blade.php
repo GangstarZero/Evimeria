@@ -24,7 +24,7 @@
                     <a href="{{ route('job.userDetailPage', ['id' => $job->id]) }}" class="job">
                         <img src="{{ asset($job->poster) }}" />
                     </a>
-                    {{ $job->company->name }}
+                    <p class="company-name">{{ $job->company->name }}</p>
                 </div>
             @endforeach
         </div>
@@ -36,6 +36,6 @@
 
     @include('authentication.logout')
 
-    @include('job.company.searchJob')
+    @include('job.searchJob')
 
 @endsection

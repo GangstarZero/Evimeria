@@ -10,33 +10,37 @@
 
     @include('layout.companyNavbar')
 
-    <div class="addPage">
-        <form id="addJobForm">
-            <h3>Insert Job</h3>
-            <div class="inputBoxContainer">
-                <select id="titleDdl" required>
-                    <option hidden></option>
-                    @foreach ($titleList as $title)
-                        <option value={{ $title->id }}>{{ $title->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="inputBoxContainer">
-                <p><strong>Guidelines for Job Description:</strong> Please include the main purpose of the role, key
-                    responsibilities, required skills and qualifications, and any additional information about company
-                    culture, benefits, or growth opportunities. Aim to give candidates a clear understanding of the role and
-                    its expectations.</p>
-                <textarea id="description" placeholder="Description" required></textarea>
-            </div>
-            <div class="inputBoxContainer">
-                <label for="poster" class="uploadPoster">
-                    <label id="chooseFileText">Choose a File</label>
-                    <img src="#" id="file-preview">
-                </label>
-                <input type="file" id="poster" required />
-            </div>
-            <button type="submit" id="insertButton" class="btn btn-primary">Insert</button>
-        </form>
+    <div class="center-wrap">
+        <div class="addPage">
+            <form id="addJobForm">
+                <h3 style="text-align: center"><strong>Add New Job</strong></h3>
+                <div class="inputBoxContainer">
+                    <select id="titleDdl" required>
+                        <option hidden></option>
+                        @foreach ($titleList as $title)
+                            <option value={{ $title->id }}>{{ $title->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="inputBoxContainer">
+                    <p><strong>Guidelines for Job Description:</strong> Please include the main purpose of the role, key
+                        responsibilities, required skills and qualifications, and any additional information about company
+                        culture, benefits, or growth opportunities. Aim to give candidates a clear understanding of the role
+                        and
+                        its expectations.</p>
+                    <textarea id="description" placeholder="Description" required></textarea>
+                </div>
+                <div class="inputBoxContainer">
+                    <p><strong>Recruitment Poster:</strong></p>
+                    <label for="poster" class="uploadPoster">
+                        <label id="chooseFileText">Choose a File</label>
+                        <img src="#" id="file-preview">
+                    </label>
+                    <input type="file" id="poster" required />
+                </div>
+                <button type="submit" id="insertButton" class="btn btn-primary">Insert</button>
+            </form>
+        </div>
     </div>
 
 @endsection

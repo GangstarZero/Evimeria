@@ -7,18 +7,18 @@
         <div class="collapse navbar-collapse justify-content-center">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('home') ? 'text-decoration-underline' : '' }}"
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('home') ? 'text-decoration-underline' : 'animated-link' }}"
                         href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('job.guestIndexPage') ? 'text-decoration-underline' : '' }}"
+                    <a class="nav-link fs-4 mx-4 text-white {{ Route::is('job.guestIndexPage') ? 'text-decoration-underline' : 'animated-link' }}"
                         href="{{ route('job.guestIndexPage') }}">Jobs</a>
                 </li>
             </ul>
         </div>
 
         <div>
-            <a class="btn btn-primary fs-5" href="{{ route('login') }}">Login</a>
+            <a class="custom-login-btn" href="{{ route('login') }}">Login</a>
         </div>
     </div>
 
