@@ -1,0 +1,63 @@
+.custom-login-btn {
+   display: inline-flex;
+   align-items: center; /* Vertically align the text */
+   justify-content: center; /* Horizontally center the text */
+   padding: 0.375rem 0.75rem; /* Standard padding for Bootstrap buttons */
+   font-size: 1rem; /* Standard font size for Bootstrap buttons */
+   color: #ffffff;
+   background-color: #F4A261;
+   text-decoration: none;
+   border-radius: 0.375rem; /* Matching border-radius with Bootstrap */
+   transition: all 0.3s ease;
+   font-family: 'Poppins', sans-serif;
+   font-weight: 500;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   border: none; /* Remove any border */
+   cursor: pointer;
+}
+
+.custom-login-btn:hover {
+   background-color: #E76F51; 
+   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+   transform: translateY(-2px); 
+}
+
+.custom-login-btn:active {
+   transform: translateY(0);
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.animated-link {
+   color: #fff;
+   position: relative;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+.animated-link:hover {
+   color: #F4A261;
+}
+
+.animated-link::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 0;
+   height: 2px;
+   background-color: #E76F51;
+   transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+   width: 100%;
+}
+
+.animated-link.active {
+   color: #F4A261; 
+}
+
+.animated-link.active::after {
+   width: 100%; 
+   background-color: #F4A261;
+}

@@ -74,7 +74,7 @@
                 formData.append('poster', document.getElementById('poster').files[0]);
 
                 $.ajax({
-                    url: '{{ route('api/update') }}',
+                    url: '{{ route('company.job.api.update') }}',
                     type: 'POST',
                     data: formData,
                     contentType: false,
@@ -89,37 +89,6 @@
             })
         })
 
-        const acceptButtonClick = (id) => {
-
-            $.ajax({
-                url: '{{ route('apply_job.edit') }}',
-                type: 'PUT',
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    id: parseInt(id),
-                    status: "Accepted"
-                },
-                success: function(response, status, xhr) {},
-                error: function(xhr) {
-                    console.log(xhr)
-                }
-            })
-        }
-
-        const rejectButtonClick = (id) => {
-            $.ajax({
-                url: '{{ route('apply_job.edit') }}',
-                type: 'PUT',
-                data: {
-                    _token: '{{ csrf_token() }}',
-                    id: parseInt(id),
-                    status: "Rejected"
-                },
-                success: function(response, status, xhr) {
-                    window.location.reload()
-                }
-            })
-        }
     </script>
     @include('authentication.logout')
 @endsection

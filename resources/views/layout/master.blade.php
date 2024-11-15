@@ -13,9 +13,21 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
     <style>
-        html, body {height: 100%;}
+        html,
+        body {
+            height: 100%;
+        }
+
+        .navbar,
+        .navbar-brand,
+        .nav-link,
+        .btn {
+            font-family: 'Poppins', sans-serif;
+        }
     </style>
 
     @yield('extra-css')
@@ -25,6 +37,6 @@
     @yield('content')
 </body>
 
-    @yield('extra-js')
+@yield('extra-js')
 
 </html>

@@ -10,17 +10,16 @@
 
     @include('layout.guestNavbar')
 
-    <div class="my-5 px-5" style="padding-left: 80px; padding-right: 80px;"> <!-- Custom padding without container -->
+    <div class="my-5 px-5" style="padding-left: 80px; padding-right: 80px;"> 
         <div class="row align-items-stretch">
             <div class="col-md-7 p-0">
                 <img src="{{ asset('assets/web/dashboard-pic1.jpg') }}" alt="User Image" class="img-fluid h-100"
                     style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);" />
             </div>
             <div class="col-md-5 d-flex align-items-center justify-content-center">
-                <div class="text-center"
-                    style="background-color: #F5F5F5; padding: 20px; height: auto; border-radius: 20px; width: 75%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); ">
+                <div class="text-center box-container">
                     <h1>Evimeria</h1>
-                    <p style="text-align: justify; font-size: 1.2rem;">
+                    <p class="box-text">
                         Made in 2024, Evimeria was made in order to improve the condition of the workfield and give more
                         chance to people who have troubles to find a job. At Evimeria, we specialize in connecting top-tier
                         talent with the world's leading organizations. With a passion for finding the perfect match, we
