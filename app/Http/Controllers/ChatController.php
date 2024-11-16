@@ -10,17 +10,13 @@ class ChatController extends Controller
 {
     public function indexUser() {
         $id = Auth::user()->id;
-        $chat_rooms = ChatRoom::where('user_id', $id)
-            ->orWhere('company_id', $id)
-            ->get();
+        $chat_rooms = ChatRoom::where('user_id', $id)->get();
         return view('user.chat', compact('chat_rooms'));
     }
 
     public function indexCompany() {
         $id = Auth::user()->id;
-        $chat_rooms = ChatRoom::where('user_id', $id)
-            ->orWhere('company_id', $id)
-            ->get();
+        $chat_rooms = ChatRoom::where('company_id', $id)->get();
         return view('company.chat', compact('chat_rooms'));
     }
 

@@ -10,11 +10,17 @@
 
     @include('layout.userNavbar')
 
-    <h1>Chat</h1>
-
-    @foreach ($chat_rooms as $chat_room)
-        <a href="{{ route('chatDetail', ['id' => $chat_room->id]) }}">{{ $chat_room->company->name }}</a>
-    @endforeach
+    <div class="p-5 d-flex justify-content-center">
+        <div class="p-3 d-flex flex-column gap-3 rounded" style="box-shadow: 0px 0px 5px grey">
+            @foreach ($chat_rooms as $chat_room)
+                <div class="p-3 rounded d-flex gap-5 justify-content-between align-items-center" style="border: 1px solid #ddd;">
+                    <div>Name: {{ $chat_room->company->name }}</div>
+                    <div>Address: {{ $chat_room->company->address }}</div>
+                    <a href="{{ route('chatDetail', ['id' => $chat_room->id]) }}" class="btn btn-primary">Detail</a>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
 @endsection
 
