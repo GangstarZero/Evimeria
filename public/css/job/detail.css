@@ -70,6 +70,15 @@ img {
     outline: none;
 }
 
+.job-description-box-edit {
+    height: 23rem;
+    padding-right: 5px; 
+    width: 40rem; 
+    resize: none; 
+    border-radius: 4px; 
+}
+
+
 .job-description-textarea {
     height: 23rem; 
     overflow-y: auto; 

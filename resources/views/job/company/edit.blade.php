@@ -20,7 +20,7 @@
                         <p class="company-description" style="white-space: pre-line;"><strong>Company Description:</strong>{{ $job->company->description }}</p>
                         <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
                         <p><strong>Posted:</strong> {{ $job->created_at->format('d F Y') }}</p>
-                        <div class="job-description">
+                        <div class="job-description-box-edit">
                             <strong>Job Description:</strong>
                             <textarea class="job-description-textarea" id="description" name="job_description" style="white-space: pre-line;">{{ $job->description }}</textarea>
                         </div>
