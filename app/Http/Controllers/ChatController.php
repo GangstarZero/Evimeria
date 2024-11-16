@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chat;
 use App\Models\ChatRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,9 +30,11 @@ class ChatController extends Controller
             'company_id'
         ]);
 
-        $chat = Chat::find($temp);
+        $chat_room = ChatRoom::where('user_id', $req->user_id)
+            ->where('company_id', $req->company_id)
+            ->count();
 
-        if(!$chat) {
+        if($chat_room == 0) {
             ChatRoom::create($temp);
         }
 
