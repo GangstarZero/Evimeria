@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
 }
 
 .company-detail p{
@@ -18,7 +18,8 @@
 .company-info{
     display: flex;
     gap: 20px;
-    max-height: 50rem;
+    max-height: 45rem;
+    align-items: center;
 }
 
 .company-detail {
@@ -82,7 +83,7 @@ img {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    max-height: 15rem; 
+    max-height: 11rem; 
     overflow: auto; 
     padding-right: 5px;
 }

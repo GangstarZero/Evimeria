@@ -97,10 +97,37 @@ class JobController extends Controller
         Job::create($data);
     }
 
-    public function updateJob(Request $req)
-    {
-        $job = Job::with(['title', 'company'])->find($req->jobId);
+   public function updateJob(Request $req)
+{
+    $validatedData = $req->validate([
+        'jobId' => 'required',
+        'description' => 'required|string|max:2000', 
+        'poster' => 'nullable', 
+    ]);
 
-        
+    $job = Job::find($validatedData['jobId']);
+    if (!$job) {
+        return response()->json(['message' => 'Job not found'], 404);
     }
+
+    $job->description = $validatedData['description'];
+
+    if ($req->hasFile('poster') && $req->file('poster')->isValid()) {
+        $posterFile = $req->file('poster');
+        $posterPath = 'assets/poster';
+        $posterName = $posterFile->getClientOriginalName();
+
+        $posterFile->move(public_path($posterPath), $posterName);
+
+        $job->poster = "$posterPath/$posterName";
+    }
+
+    $job->save();
+
+    return response()->json([
+        'message' => 'Job updated successfully',
+        'job' => $job,
+    ], 200);
+}
+
 }
