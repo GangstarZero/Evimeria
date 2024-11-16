@@ -8,11 +8,18 @@
 
 @section('content')
 
-    @include('layout.companyNavbar')
+    {{-- @include('layout.companyNavbar') --}}
+
+    <div class="p-3 d-flex gap-4 position-fixed top-0 start-0 end-0" style="background-color: #8B3333;">
+        <a href="{{ route('company.chat') }}">
+            <img src="/assets/additional/back.png" style="width: 2rem; height: 2rem;" />
+        </a>
+        <div class="text-light fw-bold" style="font-size: 1.25rem">{{ $chat_room->company->name }}</div>
+    </div>
+    <div style="height: 64px"></div>
 
     <div id="chatList" class="d-flex flex-column gap-3 p-3">
         @foreach ($chat_room->chats as $chat)
-        {{-- {{ $chat }} --}}
             @if ($chat->is_sender_user)
                 <div class="d-flex justify-content-start">
                     <div class="px-2 py-1 rounded" style="max-width: 35%; background-color: silver;">
