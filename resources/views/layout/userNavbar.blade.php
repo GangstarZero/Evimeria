@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #8B3333;">
+<nav class="navbar navbar-expand-md navbar-dark position-fixed top-0 start-0 end-0" style="background-color: #8B3333; z-index: 3;">
     <div class="container-fluid">
         <div class="navbar-brand">
             <p class="mb-0" style="font-size: 1.3rem; color: white;">Evimería</p>
@@ -30,3 +30,4 @@
         </div>
     </div>
 </nav>
+<div style="height: 66.07px"></div>
