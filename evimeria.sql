@@ -45,7 +45,31 @@ CREATE TABLE `apply_job` (
 --
 
 INSERT INTO `apply_job` (`id`, `jobId`, `userId`, `fullName`, `phoneNumber`, `salaryExpectation`, `cv`, `status`, `created_at`, `updated_at`) VALUES
-(1, 7, 1, 'efef', '0111111111', '4000000', 'wdwd', 'Applied', '2024-11-17 07:33:55', '2024-11-17 07:33:55');
+(1, 1, 1, 'Andi Susanto', '08123456789', '5000000', 'cv_andi.pdf', 'Applied', '2024-11-17 08:00:00', '2024-11-17 08:00:00'),
+(2, 2, 2, 'Budi Hartono', '08198765432', '6000000', 'cv_budi.pdf', 'Applied', '2024-11-17 08:10:00', '2024-11-17 08:10:00'),
+(3, 3, 3, 'Citra Mulyani', '08134567890', '5500000', 'cv_citra.pdf', 'Applied', '2024-11-17 08:20:00', '2024-11-17 08:20:00'),
+(4, 4, 4, 'Dian Nugraha', '08123456780', '5200000', 'cv_dian.pdf', 'Applied', '2024-11-17 08:30:00', '2024-11-17 08:30:00'),
+(5, 5, 5, 'Eka Putri', '08167890123', '4800000', 'cv_eka.pdf', 'Applied', '2024-11-17 08:40:00', '2024-11-17 08:40:00'),
+(6, 6, 6, 'Fajar Pratama', '08178901234', '5300000', 'cv_fajar.pdf', 'Applied', '2024-11-17 08:50:00', '2024-11-17 08:50:00'),
+(7, 7, 7, 'Gina Rahma', '08189012345', '4700000', 'cv_gina.pdf', 'Applied', '2024-11-17 09:00:00', '2024-11-17 09:00:00'),
+(8, 8, 8, 'Hendra Setiawan', '08190123456', '4900000', 'cv_hendra.pdf', 'Applied', '2024-11-17 09:10:00', '2024-11-17 09:10:00'),
+(9, 9, 9, 'Ika Novita', '08112345678', '5200000', 'cv_ika.pdf', 'Applied', '2024-11-17 09:20:00', '2024-11-17 09:20:00'),
+(10, 1, 10, 'Joko Santoso', '08123456790', '5800000', 'cv_joko.pdf', 'Applied', '2024-11-17 09:30:00', '2024-11-17 09:30:00'),
+(11, 2, 1, 'Andi Susanto', '08123456789', '6000000', 'cv_andi.pdf', 'Applied', '2024-11-17 09:40:00', '2024-11-17 09:40:00'),
+(12, 3, 2, 'Budi Hartono', '08198765432', '5700000', 'cv_budi.pdf', 'Applied', '2024-11-17 09:50:00', '2024-11-17 09:50:00'),
+(13, 4, 3, 'Citra Mulyani', '08134567890', '5600000', 'cv_citra.pdf', 'Applied', '2024-11-17 10:00:00', '2024-11-17 10:00:00'),
+(14, 5, 4, 'Dian Nugraha', '08123456780', '5800000', 'cv_dian.pdf', 'Applied', '2024-11-17 10:10:00', '2024-11-17 10:10:00'),
+(15, 6, 5, 'Eka Putri', '08167890123', '5900000', 'cv_eka.pdf', 'Applied', '2024-11-17 10:20:00', '2024-11-17 10:20:00'),
+(16, 7, 6, 'Fajar Pratama', '08178901234', '6100000', 'cv_fajar.pdf', 'Applied', '2024-11-17 10:30:00', '2024-11-17 10:30:00'),
+(17, 8, 7, 'Gina Rahma', '08189012345', '5300000', 'cv_gina.pdf', 'Applied', '2024-11-17 10:40:00', '2024-11-17 10:40:00'),
+(18, 9, 8, 'Hendra Setiawan', '08190123456', '5500000', 'cv_hendra.pdf', 'Applied', '2024-11-17 10:50:00', '2024-11-17 10:50:00'),
+(19, 1, 9, 'Ika Novita', '08112345678', '5700000', 'cv_ika.pdf', 'Applied', '2024-11-17 11:00:00', '2024-11-17 11:00:00'),
+(20, 2, 10, 'Joko Santoso', '08123456790', '6000000', 'cv_joko.pdf', 'Applied', '2024-11-17 11:10:00', '2024-11-17 11:10:00'),
+(21, 3, 1, 'Andi Susanto', '08123456789', '5200000', 'cv_andi.pdf', 'Applied', '2024-11-17 11:20:00', '2024-11-17 11:20:00'),
+(22, 4, 2, 'Budi Hartono', '08198765432', '5400000', 'cv_budi.pdf', 'Applied', '2024-11-17 11:30:00', '2024-11-17 11:30:00'),
+(23, 5, 3, 'Citra Mulyani', '08134567890', '5800000', 'cv_citra.pdf', 'Applied', '2024-11-17 11:40:00', '2024-11-17 11:40:00'),
+(24, 6, 4, 'Dian Nugraha', '08123456780', '5900000', 'cv_dian.pdf', 'Applied', '2024-11-17 11:50:00', '2024-11-17 11:50:00'),
+(25, 7, 5, 'Eka Putri', '08167890123', '6100000', 'cv_eka.pdf', 'Applied', '2024-11-17 12:00:00', '2024-11-17 12:00:00');
 
 -- --------------------------------------------------------
 
@@ -91,12 +115,10 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`id`, `chat_room_id`, `is_sender_user`, `content`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'halo', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 1, 0, 'hai', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(3, 1, 0, 'nama Anda siapa ?', '2024-11-14 09:56:03', '2024-11-14 09:56:03'),
-(4, 1, 1, 'nama saya Aeiou', '2024-11-14 09:56:15', '2024-11-14 09:56:15'),
-(5, 1, 0, 'Lu tuh siapa si chat chat gua?', '2024-11-17 07:33:12', '2024-11-17 07:33:12'),
-(6, 1, 1, 'ya ndak tau kok tanya saya.', '2024-11-17 07:33:36', '2024-11-17 07:33:36');
+(1, 1, 1, 'Halo, saya baru saja melamar pekerjaan di perusahaan ini.', '2024-11-17 08:00:00', '2024-11-17 08:00:00'),
+(2, 1, 0, 'Terima kasih telah melamar! Kami akan meninjau aplikasi Anda segera.', '2024-11-17 08:05:00', '2024-11-17 08:05:00'),
+(3, 1, 1, 'Terima kasih atas responsnya, saya menantikan kabar lebih lanjut.', '2024-11-17 08:10:00', '2024-11-17 08:10:00'),
+(4, 1, 0, 'Kami akan memberi kabar dalam waktu dua minggu. Semoga sukses!', '2024-11-17 08:15:00', '2024-11-17 08:15:00');
 
 -- --------------------------------------------------------
 
@@ -115,7 +137,31 @@ CREATE TABLE `chat_room` (
 --
 
 INSERT INTO `chat_room` (`id`, `user_id`, `company_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 2),
+(5, 5, 2),
+(6, 6, 2),
+(7, 7, 3),
+(8, 8, 3),
+(9, 9, 3),
+(10, 10, 1),
+(11, 1, 1),
+(12, 2, 1),
+(13, 3, 1),
+(14, 4, 2),
+(15, 5, 2),
+(16, 6, 2),
+(17, 7, 3),
+(18, 8, 3),
+(19, 9, 3),
+(20, 10, 1),
+(21, 1, 1),
+(22, 2, 1),
+(23, 3, 1),
+(24, 4, 2),
+(25, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -137,9 +183,10 @@ CREATE TABLE `company` (
 --
 
 INSERT INTO `company` (`id`, `email`, `name`, `password`, `address`, `description`) VALUES
-(1, 'company1@gmail.com', 'company1', 'company1', 'company1 address', 'company1 description'),
-(2, 'company2@gmail.com', 'company2', 'company2', 'company2 address', 'company2 description'),
-(3, 'tesUsaha@gmail.com', 'TesCompany', 'tesUsaha', 'Jalan 123, Jakarta', 'PT BNI Life Insurance (BNI Life) merupakan perusahaan asuransi yang menyediakan berbagai produk asuransi seperti Asuransi Kehidupan (Jiwa), Kesehatan, Pendidikan, Investasi, Pensiun dan Syariah. Dalam menyelenggarakan kegiatan usahanya, BNI Life telah memperoleh izin usaha di bidang Asuransi Jiwa Berdasarkan surat dari Menteri Keuangan Nomor 305/KMK.017/1997 tanggal 7 Juli 1997. Pendirian BNI Life, sejalan dengan kebutuhan perusahaan induknya, PT Bank Negara Indonesia (Persero) Tbk atau BNI, untuk menyediakan layanan dan jasa keuangan terpadu bagi semua nasabahnya (one-stop financial services)\n\nPada tanggal 11 Maret 2014, Otoritas Jasa Keuangan (OJK) memberikan persetujuan perubahan kepemilikan saham PT BNI Life Insurance (”BNI Life”). Berdasarkan persetujuan tersebut pada tanggal 21 Maret 2014, BNI Life telah menyelenggarakan RUPSLB dengan agenda penerbitan saham baru sebanyak 120.279.633 lembar yang diambil seluruhnya oleh Sumitomo Life Insurance Company.\n\nDengan pengalaman lebih dari 19 tahun, BNI Life terus meneguhkan komitmen untuk tidak hanya memberikan perlindungan secara finansial tetapi juga berupaya memberikan nilai tambah pada setiap sisi kehidupan Anda.\n\nUntuk mewujudkan misinya, BNI Life tengah mencari talenta-talenta handal yang dinamis, terampil dan bermotivasi tinggi. Jika Anda siap menerima tantangan, segera bergabung bersama kami dengan mengirimkan aplikasi lamaran beserta CV anda.');
+(1, 'nusantara.tech@gmail.com', 'Nusantara Tech', 'nusantara123', 'Jl. Merdeka No. 10, Jakarta', 'Nusantara Tech is a leading technology solutions provider in Indonesia, specializing in software development, IT infrastructure, and cloud services. With over a decade of experience, we have partnered with hundreds of businesses to deliver scalable and efficient technological solutions that meet global standards. Our commitment to innovation and excellence makes us a trusted partner in the tech industry. \n\nWe aim to empower businesses through state-of-the-art technology, enabling them to adapt and thrive in the digital era. Our team of experts combines local insights with international expertise to create customized solutions tailored to the unique needs of Indonesian enterprises.'),
+(2, 'garuda.solutions@gmail.com', 'Garuda Solutions', 'garuda123', 'Jl. Diponegoro No. 15, Bandung', 'Garuda Solutions offers innovative IT and software development services designed to accelerate business growth. Our portfolio includes custom application development, cybersecurity solutions, and IT consultancy. Based in Bandung, we are proud to serve clients across Indonesia with dedication and precision. \n\nAt Garuda Solutions, we believe in building strong partnerships with our clients. Our mission is to transform complex business challenges into opportunities by leveraging cutting-edge technology and an agile approach. We are committed to delivering solutions that drive efficiency, productivity, and success.'),
+(3, 'mandiri.corp@gmail.com', 'Mandiri Corp', 'mandiri123', 'Jl. Kartini No. 20, Surabaya', 'Mandiri Corp is your reliable partner for business consultancy and digital transformation services. We specialize in guiding companies through the complexities of modernizing their operations, from implementing ERP systems to designing digital marketing strategies. Our holistic approach ensures that our clients achieve sustainable growth. \n\nWith offices in Surabaya, Mandiri Corp combines local market expertise with global best practices. Our team is passionate about helping businesses harness the power of technology to stay ahead in competitive markets. Together, we work towards achieving operational excellence and long-term success.'); 
+
 
 -- --------------------------------------------------------
 
@@ -179,16 +226,15 @@ CREATE TABLE `job` (
 --
 
 INSERT INTO `job` (`id`, `companyId`, `titleId`, `description`, `poster`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'desc1', 'assets/poster/andrew.png', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(2, 1, 2, 'desc2', 'assets/poster/minion.jpg', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(3, 1, 3, 'desc3', 'assets/poster/minion.jpg', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(4, 2, 1, 'desc4', 'assets/poster/naruto.jpg', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(5, 2, 2, 'desc5', 'assets/poster/spongebob.webp', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(6, 2, 3, 'desc6', 'assets/poster/patrick.jpg', 'Open', '2024-11-14 16:52:08', '2024-11-14 16:52:08'),
-(7, 1, 4, 'Sudah di Update ke 2x', 'assets/poster/alya.jpg', 'Open', '2024-11-16 08:56:08', '2024-11-16 11:29:11'),
-(8, 1, 2, 'AREA SALES MANAGER (ASM)\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS dan melakukan monitoring terhadap pencapaian target BAS serta melakukan perencanaan penjualan. Penempatan Area Karawang/Jababeka/Bekasi/Jatinegara/Matraman\r\n\r\nKualifikasi :\r\n\r\nUsia 27 - 40 tahun\r\nPendidikan S1 Semua Jurusan\r\nWajib memiliki pengalaman minimal 2 tahun sebagai leader/SPV/Manager bagian marketing asuransi jiwa, perbankan atau financial industry\r\nBerpenampilan rapih\r\nMemiliki kemampuan komunikasi, presentasi yang baik\r\nBerorientasi dengan target\r\nTidak tercatat aktif AAJI\r\n \r\n\r\nDeskripsi Pekerjaan :\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS\r\nMelakukan monitoring terhadap pencapaian target BAS\r\nMelakukan perencanaan penjualan.\r\nMembangun hubungan baik dengan pihak internal (Bank BNI) dan Eksternal (Perusahaan)\r\n \r\n\r\nManfaat yang diperoleh :\r\n\r\nTunjangan dasar setiap bulan\r\nKOMISI BULANAN TIDAK TERBATAS\r\nTunjangan transportasi setiap bulan\r\nKesempatan karir terbuka luas\r\nKesempatan mendapat perjalanan ke luar negri\r\nBonus quartal dan tahunan\r\nTraining berkelanjutan dan bersertifikat dari BNI Life Insurace\r\nPertanyaan dari perusahaan\r\nLamaran kamu akan mencakup pertanyaan-pertanyaan berikut:\r\nWhat\'s your expected monthly basic salary?\r\nWhich of the following types of qualifications do you have?\r\nHow many years\' experience do you have as an area sales manager?\r\nDo you have experience in a sales role?\r\nProfil perusahaan\r\nCompany Logo for BNI Life Insurance\r\n\r\nBNI Life Insurance \r\n3.9\r\n·\r\n327 ulasan\r\nInsurance\r\n1,001-5,000 employees\r\nPT BNI Life Insurance (BNI Life) merupakan perusahaan asuransi yang menyediakan berbagai produk asuransi seperti Asuransi Kehidupan (Jiwa), Kesehatan, Pendidikan, Investasi, Pensiun dan Syariah. Dalam menyelenggarakan kegiatan usahanya, BNI Life telah memperoleh izin usaha di bidang Asuransi Jiwa Berdasarkan surat dari Menteri Keuangan Nomor 305/KMK.017/1997 tanggal 7 Juli 1997. Pendirian BNI Life, sejalan dengan kebutuhan perusahaan induknya, PT Bank Negara Indonesia (Persero) Tbk atau BNI, untuk menyediakan layanan dan jasa keuangan terpadu bagi semua nasabahnya (one-stop financial services)\r\n\r\nPada tanggal 11 Maret 2014, Otoritas Jasa Keuangan (OJK) memberikan persetujuan perubahan kepemilikan saham PT BNI Life Insurance (”BNI Life”). Berdasarkan persetujuan tersebut pada tanggal 21 Maret 2014, BNI Life telah menyelenggarakan RUPSLB dengan agenda penerbitan saham baru sebanyak 120.279.633 lembar yang diambil seluruhnya oleh Sumitomo Life Insurance Company.\r\n\r\nDengan pengalaman lebih dari 19 tahun, BNI Life terus meneguhkan komitmen untuk tidak hanya memberikan perlindungan secara finansial tetapi juga berupaya memberikan nilai tambah pada setiap sisi kehidupan Anda.\r\n\r\nUntuk mewujudkan misinya, BNI Life tengah mencari talenta-talenta handal yang dinamis, terampil dan bermotivasi tinggi. Jika Anda siap menerima tantangan, segera bergabung bersama kami dengan mengirimkan aplikasi lamaran beserta CV anda.\r\n\r\nPT BNI Life Insurance (BNI Life) merupakan perusahaan asuransi yang menyediakan berbagai produk asuransi seperti Asuransi Kehidupan (Jiwa), Kesehatan, Pendidikan, Investasi, Pensiun dan Syariah. Dalam menyelenggarakan kegiatan usahanya, BNI Life telah memperoleh izin usaha di bidang Asuransi Jiwa Berdasarkan surat dari Menteri Keuangan Nomor 305/KMK.017/1997 tanggal 7 Juli 1997. Pendirian BNI Life, sejalan dengan kebutuhan perusahaan induknya, PT Bank Negara Indonesia (Persero) Tbk atau BNI, untuk menyediakan layanan dan jasa keuangan terpadu bagi semua nasabahnya (one-stop financial services)\r\n\r\nPada tanggal 11 Maret 2014, Otoritas Jasa Keuangan (OJK) memberikan persetujuan perubahan kepemilikan saham PT BNI Life Insurance (”BNI Life”). Berdasarkan persetujuan tersebut pada tanggal 21 Maret 2014, BNI Life telah menyelenggarakan RUPSLB dengan agenda penerbitan saham baru sebanyak 120.279.633 lembar yang diambil seluruhnya oleh Sumitomo Life Insurance Company.\r\n\r\nDengan pengalaman lebih dari 19 tahun, BNI Life terus meneguhkan komitmen untuk tidak hanya memberikan perlindungan secara finansial tetapi juga berupaya memberikan nilai tambah pada setiap sisi kehidupan Anda.\r\n\r\nUntuk mewujudkan misinya, BNI Life tengah mencari talenta-talenta handal yang dinamis, terampil dan bermotivasi tinggi. Jika Anda siap menerima tantangan, segera bergabung bersama kami dengan mengirimkan aplikasi lamaran beserta CV anda.', 'assets/poster/changli.jpg', 'closed', '2024-11-16 11:31:13', '2024-11-17 07:32:07'),
-(9, 3, 3, 'AREA SALES MANAGER (ASM)\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS dan melakukan monitoring terhadap pencapaian target BAS serta melakukan perencanaan penjualan. Penempatan Area Karawang/Jababeka/Bekasi/Jatinegara/Matraman\r\n\r\n \r\n\r\nKualifikasi :\r\n\r\nUsia 27 - 40 tahun\r\nPendidikan S1 Semua Jurusan\r\nWajib memiliki pengalaman minimal 2 tahun sebagai leader/SPV/Manager bagian marketing asuransi jiwa, perbankan atau financial industry\r\nBerpenampilan rapih\r\nMemiliki kemampuan komunikasi, presentasi yang baik\r\nBerorientasi dengan target\r\nTidak tercatat aktif AAJI\r\n \r\n\r\nDeskripsi Pekerjaan :\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS\r\nMelakukan monitoring terhadap pencapaian target BAS\r\nMelakukan perencanaan penjualan.\r\nMembangun hubungan baik dengan pihak internal (Bank BNI) dan Eksternal (Perusahaan)\r\n \r\n\r\nManfaat yang diperoleh :\r\n\r\nTunjangan dasar setiap bulan\r\nKOMISI BULANAN TIDAK TERBATAS\r\nTunjangan transportasi setiap bulan\r\nKesempatan karir terbuka luas\r\nKesempatan mendapat perjalanan ke luar negri\r\nBonus quartal dan tahunan\r\nTraining berkelanjutan dan bersertifikat dari BNI Life Insurace\r\nPertanyaan dari perusahaan\r\nLamaran kamu akan mencakup pertanyaan-pertanyaan berikut:\r\nWhat\'s your expected monthly basic salary?\r\nWhich of the following types of qualifications do you have?\r\nHow many years\' experience do you have as an area sales manager?\r\nDo you have experience in a sales role?', 'assets/poster/changli.jpg', 'Open', '2024-11-16 11:33:31', '2024-11-16 11:33:31'),
-(10, 3, 5, 'AREA SALES MANAGER (ASM)\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS dan melakukan monitoring terhadap pencapaian target BAS serta melakukan perencanaan penjualan. Penempatan Area Karawang/Jababeka/Bekasi/Jatinegara/Matraman\r\n\r\n \r\n\r\nKualifikasi :\r\n\r\nUsia 27 - 40 tahun\r\nPendidikan S1 Semua Jurusan\r\nWajib memiliki pengalaman minimal 2 tahun sebagai leader/SPV/Manager bagian marketing asuransi jiwa, perbankan atau financial industry\r\nBerpenampilan rapih\r\nMemiliki kemampuan komunikasi, presentasi yang baik\r\nBerorientasi dengan target\r\nTidak tercatat aktif AAJI\r\n \r\n\r\nDeskripsi Pekerjaan :\r\n\r\nMenjadi pemimpin bagi tenaga pemasar BAS\r\nMelakukan monitoring terhadap pencapaian target BAS\r\nMelakukan perencanaan penjualan.\r\nMembangun hubungan baik dengan pihak internal (Bank BNI) dan Eksternal (Perusahaan)\r\n \r\n\r\nManfaat yang diperoleh :\r\n\r\nTunjangan dasar setiap bulan\r\nKOMISI BULANAN TIDAK TERBATAS\r\nTunjangan transportasi setiap bulan\r\nKesempatan karir terbuka luas\r\nKesempatan mendapat perjalanan ke luar negri\r\nBonus quartal dan tahunan\r\nTraining berkelanjutan dan bersertifikat dari BNI Life Insurace\r\nPertanyaan dari perusahaan\r\nLamaran kamu akan mencakup pertanyaan-pertanyaan berikut:\r\nWhat\'s your expected monthly basic salary?\r\nWhich of the following types of qualifications do you have?\r\nHow many years\' experience do you have as an area sales manager?\r\nDo you have experience in a sales role?', 'assets/poster/alya.jpg', 'Open', '2024-11-16 11:37:07', '2024-11-16 11:37:07');
+(1, 1, 1, 'Sebagai FrontEnd Developer, Anda akan bertanggung jawab untuk menciptakan antarmuka pengguna yang menarik, responsif, dan fungsional. Anda akan bekerja dengan tim desain dan pengembang lainnya untuk memastikan aplikasi web yang dihasilkan dapat memberikan pengalaman terbaik kepada pengguna. Pemahaman mendalam tentang HTML, CSS, dan JavaScript sangat diperlukan dalam peran ini. \n\nSelain itu, pengalaman dengan framework seperti React atau Vue akan menjadi nilai tambah. Anda juga diharapkan untuk mengikuti tren teknologi terbaru dalam pengembangan antarmuka pengguna dan memberikan solusi kreatif untuk masalah desain.', 'assets/poster/poster1.png', 'Open', '2024-11-03 09:30:00', '2024-11-03 09:30:00'),
+(2, 1, 8, 'Sebagai Machine Learning Engineer, Anda akan bekerja dengan data dalam skala besar untuk membangun model pembelajaran mesin yang efektif dan akurat. Anda akan menggunakan algoritma canggih untuk membuat prediksi yang dapat membantu pengambilan keputusan strategis perusahaan. Kemampuan dalam menggunakan pustaka seperti TensorFlow atau PyTorch sangat dibutuhkan. \n\nSelain itu, Anda bertanggung jawab untuk memproses data, mengevaluasi model, dan terus meningkatkan kinerja sistem. Dalam peran ini, kolaborasi dengan tim data scientist dan pengembang lainnya akan menjadi bagian penting dari pekerjaan Anda.', 'assets/poster/poster2.jpg', 'Open', '2024-11-07 11:45:00', '2024-11-07 11:45:00'),
+(3, 1, 14, 'Sebagai Cybersecurity Analyst, Anda akan melindungi data dan sistem perusahaan dari ancaman keamanan yang terus berkembang. Anda akan memantau jaringan untuk mendeteksi aktivitas mencurigakan dan mengambil tindakan proaktif untuk mencegah pelanggaran keamanan. Pengetahuan tentang firewall, sistem deteksi intrusi, dan enkripsi sangat penting dalam peran ini. \n\nAnda juga akan bekerja dengan tim IT untuk meningkatkan kebijakan keamanan dan memberikan pelatihan kepada karyawan. Dengan ancaman siber yang terus berubah, Anda akan dituntut untuk selalu memperbarui keahlian dan mengikuti tren terbaru dalam keamanan teknologi informasi.', 'assets/poster/poster3.jpg', 'Open', '2024-11-10 14:20:00', '2024-11-10 14:20:00'),
+(4, 2, 3, 'Sebagai FullStack Developer, Anda akan mengembangkan aplikasi web dari sisi front-end hingga back-end. Anda akan menggunakan berbagai teknologi untuk memastikan aplikasi berjalan lancar, aman, dan responsif. Pemahaman tentang bahasa pemrograman seperti JavaScript, Python, atau PHP serta framework seperti Angular atau Node.js sangat diperlukan. \n\nDalam peran ini, Anda akan bekerja dengan tim desain, pengembang, dan analis untuk merancang solusi yang sesuai dengan kebutuhan bisnis. Kemampuan untuk mengintegrasikan API dan mengoptimalkan performa aplikasi akan menjadi kunci keberhasilan Anda.', 'assets/poster/poster4.jpg', 'Open', '2024-11-05 08:15:00', '2024-11-05 08:15:00'),
+(5, 2, 10, 'Sebagai Database Administrator, Anda bertanggung jawab untuk memastikan basis data perusahaan berjalan dengan optimal. Anda akan mengelola, mengamankan, dan melakukan backup data secara berkala untuk mencegah kehilangan informasi penting. Pengetahuan tentang MySQL, PostgreSQL, atau SQL Server adalah keharusan dalam peran ini. \n\nSelain itu, Anda akan bekerja untuk meningkatkan efisiensi sistem database dan memberikan dukungan teknis kepada tim pengembang. Anda juga akan menganalisis data untuk menemukan peluang peningkatan performa yang dapat mendukung kebutuhan bisnis.', 'assets/poster/poster5.jpg', 'Open', '2024-11-08 10:50:00', '2024-11-08 10:50:00'),
+(6, 2, 7, 'Sebagai Data Engineer, Anda akan membangun infrastruktur data yang memungkinkan analisis data yang efisien. Anda akan menangani pengumpulan, pemrosesan, dan transformasi data dalam jumlah besar untuk mendukung kebutuhan operasional dan strategis perusahaan. Keahlian dalam alat seperti Hadoop, Spark, atau Airflow sangat diperlukan. \n\nAnda juga bertanggung jawab untuk mengembangkan pipeline data yang andal dan memastikan data tersedia dengan kualitas tinggi. Dalam peran ini, Anda akan bekerja erat dengan data scientist dan tim analitik untuk memberikan wawasan berbasis data yang akurat.', 'assets/poster/poster6.png', 'Open', '2024-11-12 13:30:00', '2024-11-12 13:30:00'),
+(7, 3, 4, 'Sebagai DevOps Engineer, Anda akan menjembatani kesenjangan antara tim pengembangan dan operasi teknologi informasi. Anda akan mengelola proses CI/CD untuk memastikan pengiriman perangkat lunak yang cepat dan dapat diandalkan. Pengetahuan tentang Docker, Kubernetes, dan alat otomatisasi lainnya sangat penting untuk peran ini. \n\nSelain itu, Anda akan berkolaborasi dengan tim untuk meningkatkan efisiensi proses kerja dan mengurangi waktu tunggu implementasi. Anda juga akan bertanggung jawab untuk memonitor performa sistem dan memperbaiki kerentanan yang mungkin muncul.', 'assets/poster/poster7.jpg', 'Open', '2024-11-04 15:10:00', '2024-11-04 15:10:00'),
+(8, 3, 16, 'Sebagai Game Developer, Anda akan merancang dan mengembangkan permainan yang menarik dan inovatif. Anda akan menggunakan mesin seperti Unity atau Unreal Engine untuk menciptakan dunia game yang imersif. Keterampilan dalam pemrograman, desain grafis, dan pengujian game sangat diperlukan untuk peran ini. \n\nAnda juga akan bekerja sama dengan desainer dan tim kreatif lainnya untuk menghasilkan pengalaman bermain yang memukau. Dalam peran ini, kemampuan untuk memahami kebutuhan pemain dan tren dalam industri game akan menjadi keunggulan utama Anda.', 'assets/poster/poster8.jpg', 'Open', '2024-11-09 09:40:00', '2024-11-09 09:40:00'),
+(9, 3, 18, 'Sebagai AI Researcher, Anda akan mengeksplorasi teknologi terbaru dalam bidang kecerdasan buatan untuk menyelesaikan masalah kompleks. Anda akan bekerja dengan model pembelajaran mesin dan jaringan saraf untuk mengembangkan solusi inovatif. Keahlian dalam Python, MATLAB, dan pustaka AI seperti TensorFlow sangat penting. \n\nAnda juga akan memimpin proyek penelitian dan berkolaborasi dengan tim pengembang untuk menerapkan hasil penelitian ke dalam aplikasi nyata. Dengan perkembangan pesat dalam teknologi AI, Anda diharapkan untuk terus belajar dan beradaptasi dengan tren baru di industri ini.', 'assets/poster/poster9.webp', 'Open', '2024-11-13 16:25:00', '2024-11-13 16:25:00');
 
 -- --------------------------------------------------------
 
@@ -300,7 +346,22 @@ INSERT INTO `title` (`id`, `name`) VALUES
 (2, 'BackEnd'),
 (3, 'FullStack'),
 (4, 'DevOps'),
-(5, 'QA');
+(5, 'QA'),
+(6, 'Data Scientist'),
+(7, 'Data Engineer'),
+(8, 'Machine Learning Engineer'),
+(9, 'Cloud Engineer'),
+(10, 'Database Administrator'),
+(11, 'Product Manager'),
+(12, 'Project Manager'),
+(13, 'UI/UX Designer'),
+(14, 'Cybersecurity Analyst'),
+(15, 'Mobile Developer'),
+(16, 'Game Developer'),
+(17, 'Software Architect'),
+(18, 'AI Researcher'),
+(19, 'Technical Support Engineer'),
+(20, 'Site Reliability Engineer');
 
 -- --------------------------------------------------------
 
@@ -320,8 +381,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES
-(1, 'user1@gmail.com', 'user1', 'user1'),
-(2, 'user2@gmail.com', 'user2', 'user2');
+(1, 'andi.susanto@gmail.com', 'Andi Susanto', 'andi123'),
+(2, 'budi.hartono@gmail.com', 'Budi Hartono', 'budi123'),
+(3, 'citra.mulyani@gmail.com', 'Citra Mulyani', 'citra123'),
+(4, 'dian.nugraha@gmail.com', 'Dian Nugraha', 'dian123'),
+(5, 'eka.putri@gmail.com', 'Eka Putri', 'eka123'),
+(6, 'fajar.pratama@gmail.com', 'Fajar Pratama', 'fajar123'),
+(7, 'gina.rahma@gmail.com', 'Gina Rahma', 'gina123'),
+(8, 'hendra.setiawan@gmail.com', 'Hendra Setiawan', 'hendra123'),
+(9, 'ika.novita@gmail.com', 'Ika Novita', 'ika123'),
+(10, 'joko.santoso@gmail.com', 'Joko Santoso', 'joko123');
 
 -- --------------------------------------------------------
 
