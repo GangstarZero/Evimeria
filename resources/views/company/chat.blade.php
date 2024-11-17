@@ -14,8 +14,8 @@
         <div class="p-3 d-flex flex-column gap-3 rounded" style="box-shadow: 0px 0px 5px grey">
             @foreach ($chat_rooms as $chat_room)
                 <div class="p-3 rounded d-flex gap-5 justify-content-between align-items-center" style="border: 1px solid #ddd;">
-                    <div>Name: {{ $chat_room->company->name }}</div>
-                    <div>Address: {{ $chat_room->company->address }}</div>
+                    <div>Name: {{ $chat_room->user->name }}</div>
+                    <div>Email: {{ $chat_room->user->email }}</div>
                     <a href="{{ route('company.chatDetail', ['id' => $chat_room->id]) }}" class="btn btn-primary">Detail</a>
                 </div>
             @endforeach

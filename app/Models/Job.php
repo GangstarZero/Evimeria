@@ -19,7 +19,8 @@ class Job extends Model
         'companyId',
         'titleId',
         'description',
-        'poster'
+        'poster',
+        'status'
     ];
 
     public function company(): HasOne

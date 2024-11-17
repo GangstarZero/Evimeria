@@ -82,6 +82,7 @@ class JobController extends Controller
             'companyId',
             'titleId',
             'description',
+            'status'
         ]);
 
         if ($req->hasFile('poster') && $req->file('poster')->isValid()) {

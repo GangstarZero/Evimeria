@@ -14,7 +14,7 @@
         <a href="{{ route('company.chat') }}">
             <img src="/assets/additional/back.png" style="width: 2rem; height: 2rem;" />
         </a>
-        <div class="text-light fw-bold" style="font-size: 1.25rem">{{ $chat_room->company->name }}</div>
+        <div class="text-light fw-bold" style="font-size: 1.25rem">{{ $chat_room->user->name }}</div>
     </div>
     <div style="height: 64px"></div>
 
