@@ -14,7 +14,7 @@ class JobController extends Controller
     public function guestIndexPage(Request $req)
     {
         $query = $req->query('query') ?? "";
-        $jobList = Job::whereHas('title', function ($job) use ($query) {
+        $jobList = Job::where('status', 'Open')->whereHas('title', function ($job) use ($query) {
             $job->where('name', 'LIKE', '%' . $query . '%');
         })->get();
         return view('job/guest/index', compact('jobList', 'query'));
@@ -30,7 +30,7 @@ class JobController extends Controller
     public function userIndexPage(Request $req)
     {
         $query = $req->query('query') ?? "";
-        $jobList = Job::whereHas('title', function ($job) use ($query) {
+        $jobList = Job::where('status', 'Open')->whereHas('title', function ($job) use ($query) {
             $job->where('name', 'LIKE', '%' . $query . '%');
         })->get();
         return view('job/user/index', compact('jobList', 'query'));
@@ -97,37 +97,39 @@ class JobController extends Controller
         Job::create($data);
     }
 
-   public function updateJob(Request $req)
-{
-    $validatedData = $req->validate([
-        'jobId' => 'required',
-        'description' => 'required|string|max:2000', 
-        'poster' => 'nullable', 
-    ]);
+    public function updateJob(Request $req)
+    {
+        $data = $req->only([
+            'jobId',
+            'description',
+            'status',
+        ]);
 
-    $job = Job::find($validatedData['jobId']);
-    if (!$job) {
-        return response()->json(['message' => 'Job not found'], 404);
+        $job = Job::find($data['jobId']);
+        if (!$job) {
+            return response()->json(['message' => 'Job not found'], 404);
+        }
+
+        if ($req->hasFile('poster') && $req->file('poster')->isValid()) {
+            $posterFile = $req->file('poster');
+            $posterPath = 'assets/poster';
+            $posterName = $posterFile->getClientOriginalName();
+
+            $posterFile->move(public_path($posterPath), $posterName);
+
+            $data['poster'] = "$posterPath/$posterName";
+        }
+
+        $job->description = $data['description'];
+        $job->status = $data['status'];
+        if (isset($data['poster'])) {
+            $job->poster = $data['poster'];
+        }
+        $job->save();
+
+        return response()->json([
+            'message' => 'Job updated successfully',
+            'job' => $job,
+        ], 200);
     }
-
-    $job->description = $validatedData['description'];
-
-    if ($req->hasFile('poster') && $req->file('poster')->isValid()) {
-        $posterFile = $req->file('poster');
-        $posterPath = 'assets/poster';
-        $posterName = $posterFile->getClientOriginalName();
-
-        $posterFile->move(public_path($posterPath), $posterName);
-
-        $job->poster = "$posterPath/$posterName";
-    }
-
-    $job->save();
-
-    return response()->json([
-        'message' => 'Job updated successfully',
-        'job' => $job,
-    ], 200);
-}
-
 }

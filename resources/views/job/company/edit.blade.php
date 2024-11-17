@@ -17,7 +17,8 @@
                     <img src="{{ asset($job->poster) }}" alt="Job Poster" class="job-image" />
                     <div class="company-detail">
                         <p><strong>Company Name:</strong> {{ $job->company->name }}</p>
-                        <p class="company-description" style="white-space: pre-line;"><strong>Company Description:</strong>{{ $job->company->description }}</p>
+                        <p class="company-description" style="white-space: pre-line;"><strong>Company
+                                Description:</strong>{{ $job->company->description }}</p>
                         <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
                         <p><strong>Posted:</strong> {{ $job->created_at->format('d F Y') }}</p>
                         <div class="job-description-box-edit">
@@ -25,6 +26,13 @@
                             <textarea class="job-description-textarea" id="description" name="job_description" style="white-space: pre-line;">{{ $job->description }}</textarea>
                         </div>
                     </div>
+                </div>
+                <div class="job-status-container">
+                    <strong>Job Status:</strong>
+                    <select id="jobStatus" class="form-select">
+                        <option value="open" {{ $job->status === 'open' ? 'selected' : '' }}>Open</option>
+                        <option value="closed" {{ $job->status === 'closed' ? 'selected' : '' }}>Closed</option>
+                    </select>
                 </div>
                 <div class="inputBoxContainer">
                     <p><strong>Change Recruitment Poster:</strong></p>
@@ -73,7 +81,12 @@
             formData.append('_token', '{{ csrf_token() }}');
             formData.append('jobId', $('#saveButton').data('job-id'));
             formData.append('description', document.getElementById('description').value);
-            formData.append('poster', document.getElementById('poster').files[0]);
+            formData.append('status', document.getElementById('jobStatus').value);
+
+            const posterInput = document.getElementById('poster');
+            if (posterInput.files.length > 0) {
+                formData.append('poster', posterInput.files[0]);
+            }
 
             $.ajax({
                 url: '{{ route('company.job.api.update') }}',
