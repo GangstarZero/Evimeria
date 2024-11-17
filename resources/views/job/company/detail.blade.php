@@ -19,11 +19,10 @@
                     <p class="company-description" style="white-space: pre-line;"><strong>Company Description:</strong>{{ $job->company->description }}</p>
                     <p><strong>Job Title:</strong> {{ $job->title->name }}</p>
                     <p><strong>Posted:</strong> {{ $job->created_at->format('d F Y') }}</p>
-                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong>
-                        {{ $job->description }}</p>
+                    <p class="job-description" style="white-space: pre-line;"><strong>Job Description:</strong>{{ $job->description }}</p>
                 </div>
             </div>
-            <div>
+            <div class="apply-job">
                 @foreach ($applyJobList as $applyJob)
                     <div class="apply-job">
                         <div>
