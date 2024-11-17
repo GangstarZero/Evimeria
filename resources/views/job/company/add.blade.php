@@ -86,6 +86,8 @@
             formData.append('titleId', parseInt(document.getElementById('titleDdl').value));
             formData.append('description', document.getElementById('description').value);
             formData.append('poster', document.getElementById('poster').files[0]);
+            formData.append('status', 'Open');
+            console.log(formData)
 
             $.ajax({
                 url: '{{ route('company.job.api.insert') }}',
@@ -95,6 +97,9 @@
                 processData: false,
                 success: function(response, status, xhr) {
                     window.location.reload()
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseJSON.message)
                 }
             })
         })
